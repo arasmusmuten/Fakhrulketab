@@ -1,18 +1,21 @@
 @font-face {
     font-family: 'arab';
-    src: url('https://raw.githubusercontent.com/arasmusmuten/Fakhrulketab/main/arab.TTF') format('truetype');
+    src: url('https://github.com/arasmusmuten/Fakhrulketab/raw/refs/heads/main/arab.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'naz';
-    src: url('https://raw.githubusercontent.com/arasmusmuten/Fakhrulketab/main/naz.TTF') format('truetype');
+    src: url('https://github.com/arasmusmuten/Fakhrulketab/raw/refs/heads/main/naz.ttf') format('truetype');
 }
+
 body {
-    font-family: 'naz', sans-serif !important;
+    font-family: 'naz', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
 }
+
 
 
 /* هدر */
