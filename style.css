@@ -7,7 +7,7 @@
     src: url('https://raw.githubusercontent.com/arasmusmuten/Fakhrulketab/main/naz.TTF') format('truetype');
 }
 body {
-    font-family: 'naz', sans-serif;
+    font-family: 'naz', sans-serif !important;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
