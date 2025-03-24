@@ -1,6 +1,14 @@
 /* تنظیمات کلی */
+@font-face {
+    font-family: 'arab';
+    src: url('https://raw.githubusercontent.com/arasmusmuten/Fakhrulketab/fonts/arab.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'naz';
+    src: url('https://raw.githubusercontent.com/arasmusmuten/Fakhrulketab/fonts/naz.ttf') format('truetype');
+}
 body {
-    font-family: 'Shabnam', sans-serif;
+    font-family: 'naz', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
