@@ -1,4 +1,3 @@
-/* تنظیمات کلی */
 @font-face {
     font-family: 'arab';
     src: url('https://raw.githubusercontent.com/arasmusmuten/Fakhrulketab/main/arab.TTF') format('truetype');
@@ -14,6 +13,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
+
 
 /* هدر */
 header {
