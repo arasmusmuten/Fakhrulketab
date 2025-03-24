@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'arab';
-    src: url('https://github.com/arasmusmuten/Fakhrulketab/raw/refs/heads/main/arab.ttf') format('truetype');
+    src: url('https://raw.githubusercontent.com/arasmusmuten/Fakhrulketab/main/arab.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'naz';
-    src: url('https://github.com/arasmusmuten/Fakhrulketab/raw/refs/heads/main/naz.ttf') format('truetype');
+    src: url('https://raw.githubusercontent.com/arasmusmuten/Fakhrulketab/main/naz.ttf') format('truetype');
 }
 
 body {
@@ -15,8 +15,6 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
-
-
 
 /* هدر */
 header {
