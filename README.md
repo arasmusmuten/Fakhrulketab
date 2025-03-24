@@ -1,2 +1,3 @@
 # Fakhrulketab
-Fakhrulketab publishery official website. (since 2020)
+Fakhrulketab pub. official website. (since 2020)
+by Mahan Safiyari
