@@ -1,81 +1,90 @@
 <!DOCTYPE html>
 <html lang="fa">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دوره‌های آموزشی - انتشارات فخرالکتاب</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --purple: #8e44ad;
-            --pink: #e84393;
-            --earth: #6c5ce7;
-        }
-        
-        body {
-            font-family: 'B Nazanin', sans-serif;
-            background-color: #f8f9fa;
-        }
-        
-        .course-card {
-            transition: all 0.3s ease;
-            border-radius: 0.75rem;
-            border-left: 4px solid;
-            height: 100%;
-        }
-        
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .card-header {
+    <title>دوره های آموزشی - انتشارات فخرالکتاب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Shabnam&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body dir="rtl">
+        <!-- هدر -->
+        <header class="bg-dark text-white py-4">
+            <div class="container d-flex justify-content-between align-items-center">
+                <h1 class="font-weight-bold" style="font-family: 'B Titr', sans-serif;">انتشارات و موسسه آموزشی فخرالکتاب</h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="index.html">خانه</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="courses.html">دوره‌های ما</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="books.html">کتاب‌های ما</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="about.html">درباره ما</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="contact.html">تماس با ما</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="login.html">ورود / ثبت‌نام</a></li>
+                    </ul>
+                </nav>
+            </div>
+            :root {
+                --purple: #8e44ad;
+                --pink: #e84393;
+                --earth: #6c5ce7;
+            }
+            
+            body {
+                font-family: 'B Nazanin', sans-serif;
+                background-color: #f8f9fa;
+            }
+            
+            .course-card {
+                transition: all 0.3s ease;
+                border-radius: 0.75rem;
+                border-left: 4px solid;
+                height: 100%;
+            }
+            
+            .course-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            .card-header {
             border-radius: 0.75rem 0.75rem 0 0 !important;
-            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-        }
-        
-        .course-title {
-            color: #000 !important; /* عنوان سیاه */
-            font-family: 'B Titr', sans-serif;
-        }
-        
-        .course-img {
-            height: 180px;
-            object-fit: cover;
-        }
-        
-        .course-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 2;
-        }
-        
-        .btn-purple {
-            background-color: var(--purple);
-            border-color: var(--purple);
-        }
-        
-        .btn-pink {
-            background-color: var(--pink);
-            border-color: var(--pink);
-        }
-        
-        .btn-earth {
-            background-color: var(--earth);
-            border-color: var(--earth);
-        }
-    </style>
-</head>
+            }
+            
+            .course-title {
+                color: #000 !important; /* عنوان سیاه */
+                font-family: 'B Titr', sans-serif;
+            }
+            
+            .course-img {
+                height: 180px;
+                object-fit: cover;
+            }
+            
+            .course-badge {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 2;
+            }
+            
+            .btn-purple {
+                background-color: var(--purple);
+                border-color: var(--purple);
+            }
+            
+            .btn-pink {
+                background-color: var(--pink);
+                border-color: var(--pink);
+            }
+            
+            .btn-earth {
+                background-color: var(--earth);
+                border-color: var(--earth);
+            }
+        </style>
+    </head>
 
-<body dir="rtl">
-    <!-- هدر -->
-    <header class="bg-dark text-white py-4">
-        <div class="container">
-            <h1 class="text-center font-weight-bold" style="font-family: 'B Titr', sans-serif;">انتشارات و موسسه آموزشی فخرالکتاب</h1>
-        </div>
-    </header>
 
     <!-- محتوای اصلی دوره‌ها -->
     <main class="py-5">
