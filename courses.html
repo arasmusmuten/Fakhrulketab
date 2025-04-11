@@ -32,6 +32,12 @@
         
         .card-header {
             border-radius: 0.75rem 0.75rem 0 0 !important;
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+        }
+        
+        .course-title {
+            color: #000 !important; /* عنوان سیاه */
+            font-family: 'B Titr', sans-serif;
         }
         
         .course-img {
@@ -66,18 +72,8 @@
 <body dir="rtl">
     <!-- هدر -->
     <header class="bg-dark text-white py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="font-weight-bold" style="font-family: 'B Titr', sans-serif;">انتشارات و موسسه آموزشی فخرالکتاب</h1>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="index.html">خانه</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="courses.html">دوره‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="books.html">کتاب‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="about.html">درباره ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="contact.html">تماس با ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="login.html">ورود / ثبت‌نام</a></li>
-                </ul>
-            </nav>
+        <div class="container">
+            <h1 class="text-center font-weight-bold" style="font-family: 'B Titr', sans-serif;">انتشارات و موسسه آموزشی فخرالکتاب</h1>
         </div>
     </header>
 
@@ -93,50 +89,41 @@
                 <!-- دوره زیست شناسی سلولی -->
                 <div class="col">
                     <div class="card course-card border-primary">
-                        <div class="card-header bg-gradient-primary text-white text-center py-3">
-                            <h4 class="mb-0" style="font-family: 'B Titr', sans-serif;">زیست شناسی سلولی ابوعلی سینا</h4>
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">زیست شناسی سلولی ابوعلی سینا</h4>
                         </div>
                         <div class="card-img-top overflow-hidden">
                             <img src="course1.jpg" class="img-fluid w-100 course-img" alt="زیست شناسی سلولی">
                         </div>
                         <div class="card-body d-flex flex-column pb-0">
-                            <div class="features-list mb-3">
-                                <div class="feature-item d-flex align-items-start mb-2">
-                                    <i class="fas fa-dna text-primary mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">مباحث زیست شناسی سلولی و مولکولی</span>
-                                </div>
-                                <div class="feature-item d-flex align-items-start mb-2">
-                                    <i class="fas fa-book text-primary mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">سوالات کنکور سراسری</span>
-                                </div>
-                                <div class="feature-item d-flex align-items-start">
-                                    <i class="fas fa-file-alt text-primary mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">جزوه درسی + تمرین و نکات</span>
-                                </div>
-                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>زیست شناسی سلولی و مولکولی</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
                             
-                            <div class="specs-box bg-light p-3 rounded mb-3">
+                            <div class="bg-light p-3 rounded mb-3">
                                 <div class="d-flex justify-content-between mb-1">
-                                    <small style="font-family: 'B Nazanin';">سطح:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">پیشرفته</small>
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
                                 </div>
                                 <div class="d-flex justify-content-between mb-1">
-                                    <small style="font-family: 'B Nazanin';">مدت:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">40 ساعت</small>
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">40 ساعت</small>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <small style="font-family: 'B Nazanin';">محتوا:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">ویدیو + جزوه</small>
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="card-footer bg-transparent border-top-0 pt-0">
                             <div class="d-grid gap-2">
-                                <a href="course1.html" class="btn btn-primary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                <a href="course1.html" class="btn btn-primary py-2">
                                     <i class="fas fa-play-circle me-2"></i> شروع یادگیری
                                 </a>
-                                <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                <button class="btn btn-outline-secondary py-2">
                                     <i class="fas fa-info-circle me-2"></i> پیشنمایش
                                 </button>
                             </div>
@@ -147,50 +134,356 @@
                 <!-- دوره زیست شناسی جانوری -->
                 <div class="col">
                     <div class="card course-card border-success">
-                        <div class="card-header bg-gradient-success text-white text-center py-3">
-                            <h4 class="mb-0" style="font-family: 'B Titr', sans-serif;">زیست شناسی جانوری زکریای قزوینی</h4>
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">زیست شناسی جانوری زکریای قزوینی</h4>
                         </div>
                         <div class="card-img-top overflow-hidden">
                             <img src="course2.jpg" class="img-fluid w-100 course-img" alt="زیست شناسی جانوری">
                         </div>
                         <div class="card-body d-flex flex-column pb-0">
-                            <div class="features-list mb-3">
-                                <div class="feature-item d-flex align-items-start mb-2">
-                                    <i class="fas fa-paw text-success mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">مباحث زیست شناسی جانوری</span>
-                                </div>
-                                <div class="feature-item d-flex align-items-start mb-2">
-                                    <i class="fas fa-book text-success mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">سوالات کنکور سراسری</span>
-                                </div>
-                                <div class="feature-item d-flex align-items-start">
-                                    <i class="fas fa-file-alt text-success mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">جزوه درسی + تمرین و نکات</span>
-                                </div>
-                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>زیست شناسی جانوری</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-success me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
                             
-                            <div class="specs-box bg-light p-3 rounded mb-3">
+                            <div class="bg-light p-3 rounded mb-3">
                                 <div class="d-flex justify-content-between mb-1">
-                                    <small style="font-family: 'B Nazanin';">سطح:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">متوسط</small>
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">متوسط</small>
                                 </div>
                                 <div class="d-flex justify-content-between mb-1">
-                                    <small style="font-family: 'B Nazanin';">مدت:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">35 ساعت</small>
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">35 ساعت</small>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <small style="font-family: 'B Nazanin';">محتوا:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">ویدیو + جزوه</small>
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="card-footer bg-transparent border-top-0 pt-0">
                             <div class="d-grid gap-2">
-                                <a href="course2.html" class="btn btn-success py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                <a href="course2.html" class="btn btn-success py-2">
                                     <i class="fas fa-play-circle me-2"></i> شروع یادگیری
                                 </a>
-                                <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره زیست شناسی گیاهی -->
+                <div class="col">
+                    <div class="card course-card border-info">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">زیست شناسی گیاهی ابوحنیفه دینوری</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course3.jpg" class="img-fluid w-100 course-img" alt="زیست شناسی گیاهی">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-info me-2"></i>زیست شناسی گیاهی</li>
+                                <li class="mb-2"><i class="fas fa-check text-info me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-info me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">مقدماتی</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">30 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course3.html" class="btn btn-info py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره زیست شناسی تکامل -->
+                <div class="col">
+                    <div class="card course-card border-warning">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">زیست شناسی تکامل ابوریحان بیرونی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course4.jpg" class="img-fluid w-100 course-img" alt="زیست شناسی تکامل">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>زیست شناسی تکامل</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-warning me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">45 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course4.html" class="btn btn-warning py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره شیمی آلی -->
+                <div class="col">
+                    <div class="card course-card border-danger">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">شیمی آلی جابر بن حیان</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course5.jpg" class="img-fluid w-100 course-img" alt="شیمی آلی">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>شیمی آلی دبیرستان</li>
+                                <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-danger me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">50 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course5.html" class="btn btn-danger py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره شیمی معدنی -->
+                <div class="col">
+                    <div class="card course-card border-secondary">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">شیمی معدنی ابن ماسویه</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course6.jpg" class="img-fluid w-100 course-img" alt="شیمی معدنی">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-secondary me-2"></i>شیمی معدنی دبیرستان</li>
+                                <li class="mb-2"><i class="fas fa-check text-secondary me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-secondary me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">متوسط</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">35 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course6.html" class="btn btn-secondary py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره شیمی تجزیه -->
+                <div class="col">
+                    <div class="card course-card border-dark">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">شیمی تجزیه زکریای رازی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course7.jpg" class="img-fluid w-100 course-img" alt="شیمی تجزیه">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-dark me-2"></i>شیمی تجزیه دبیرستان</li>
+                                <li class="mb-2"><i class="fas fa-check text-dark me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-dark me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">40 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course7.html" class="btn btn-dark py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره شیمی فیزیک -->
+                <div class="col">
+                    <div class="card course-card border-primary">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">شیمی فیزیک کوشیار گیلانی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course8.jpg" class="img-fluid w-100 course-img" alt="شیمی فیزیک">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>شیمی فیزیک دبیرستان</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">45 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course8.html" class="btn btn-primary py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره شیمی تجربی -->
+                <div class="col">
+                    <div class="card course-card border-success">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">شیمی تجربی احمد بن عمادالدین</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course9.jpg" class="img-fluid w-100 course-img" alt="شیمی تجربی">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>آزمایشگاه شیمی دبیرستان</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-success me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">عملی-تئوری</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">30 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course9.html" class="btn btn-success py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
                                     <i class="fas fa-info-circle me-2"></i> پیشنمایش
                                 </button>
                             </div>
@@ -201,51 +494,41 @@
                 <!-- دوره فیزیک مواد -->
                 <div class="col">
                     <div class="card course-card border-warning">
-                        <div class="card-header bg-gradient-warning text-dark text-center py-3">
-                            <h4 class="mb-0" style="font-family: 'B Titr', sans-serif;">فیزیک مواد ابوسعید سجزی</h4>
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">فیزیک مواد ابوسعید سجزی</h4>
                         </div>
                         <div class="card-img-top overflow-hidden">
                             <img src="course10.jpg" class="img-fluid w-100 course-img" alt="فیزیک مواد">
-                            <span class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1" style="font-family: 'B Nazanin';">جدید</span>
                         </div>
                         <div class="card-body d-flex flex-column pb-0">
-                            <div class="features-list mb-3">
-                                <div class="feature-item d-flex align-items-start mb-2">
-                                    <i class="fas fa-atom text-warning mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">مباحث مقدماتی فیزیک دبیرستان</span>
-                                </div>
-                                <div class="feature-item d-flex align-items-start mb-2">
-                                    <i class="fas fa-book text-warning mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">سوالات کنکور سراسری</span>
-                                </div>
-                                <div class="feature-item d-flex align-items-start">
-                                    <i class="fas fa-file-alt text-warning mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">جزوه درسی + تمرین و نکات</span>
-                                </div>
-                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>مباحث مقدماتی فیزیک</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-warning me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
                             
-                            <div class="specs-box bg-light p-3 rounded mb-3">
+                            <div class="bg-light p-3 rounded mb-3">
                                 <div class="d-flex justify-content-between mb-1">
-                                    <small style="font-family: 'B Nazanin';">سطح:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">مقدماتی تا پیشرفته</small>
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">مقدماتی تا پیشرفته</small>
                                 </div>
                                 <div class="d-flex justify-content-between mb-1">
-                                    <small style="font-family: 'B Nazanin';">مدت:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">35 ساعت</small>
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">35 ساعت</small>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <small style="font-family: 'B Nazanin';">محتوا:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">ویدیو + جزوه</small>
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="card-footer bg-transparent border-top-0 pt-0">
                             <div class="d-grid gap-2">
-                                <a href="course10.html" class="btn btn-warning py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                <a href="course10.html" class="btn btn-warning py-2">
                                     <i class="fas fa-play-circle me-2"></i> شروع یادگیری
                                 </a>
-                                <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                <button class="btn btn-outline-secondary py-2">
                                     <i class="fas fa-info-circle me-2"></i> پیشنمایش
                                 </button>
                             </div>
@@ -256,51 +539,41 @@
                 <!-- دوره مکانیک و انرژی -->
                 <div class="col">
                     <div class="card course-card border-danger">
-                        <div class="card-header bg-gradient-danger text-white text-center py-3">
-                            <h4 class="mb-0" style="font-family: 'B Titr', sans-serif;">مکانیک و انرژی قطب‌الدین شیرازی</h4>
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">مکانیک و انرژی قطب‌الدین شیرازی</h4>
                         </div>
                         <div class="card-img-top overflow-hidden">
                             <img src="course11.jpg" class="img-fluid w-100 course-img" alt="مکانیک و انرژی">
-                            <span class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1" style="font-family: 'B Nazanin';">پرفروش</span>
                         </div>
                         <div class="card-body d-flex flex-column pb-0">
-                            <div class="features-list mb-3">
-                                <div class="feature-item d-flex align-items-start mb-2">
-                                    <i class="fas fa-bolt text-danger mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">مباحث انرژی، فشار و حرکت</span>
-                                </div>
-                                <div class="feature-item d-flex align-items-start mb-2">
-                                    <i class="fas fa-book text-danger mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">سوالات کنکور سراسری</span>
-                                </div>
-                                <div class="feature-item d-flex align-items-start">
-                                    <i class="fas fa-file-alt text-danger mt-1 me-2"></i>
-                                    <span style="font-family: 'B Titr', sans-serif;">جزوه درسی + تمرین و نکات</span>
-                                </div>
-                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>مباحث انرژی و حرکت</li>
+                                <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-danger me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
                             
-                            <div class="specs-box bg-light p-3 rounded mb-3">
+                            <div class="bg-light p-3 rounded mb-3">
                                 <div class="d-flex justify-content-between mb-1">
-                                    <small style="font-family: 'B Nazanin';">سطح:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">پیشرفته</small>
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
                                 </div>
                                 <div class="d-flex justify-content-between mb-1">
-                                    <small style="font-family: 'B Nazanin';">مدت:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">45 ساعت</small>
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">45 ساعت</small>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <small style="font-family: 'B Nazanin';">محتوا:</small>
-                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">ویدیو + جزوه + تمرین</small>
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه + تمرین</small>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="card-footer bg-transparent border-top-0 pt-0">
                             <div class="d-grid gap-2">
-                                <a href="course11.html" class="btn btn-danger py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                <a href="course11.html" class="btn btn-danger py-2">
                                     <i class="fas fa-play-circle me-2"></i> شروع یادگیری
                                 </a>
-                                <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                <button class="btn btn-outline-secondary py-2">
                                     <i class="fas fa-info-circle me-2"></i> پیشنمایش
                                 </button>
                             </div>
@@ -308,8 +581,456 @@
                     </div>
                 </div>
 
-                <!-- بقیه دوره‌ها به همین صورت اضافه شوند -->
-                
+                <!-- دوره فیزیک گرما -->
+                <div class="col">
+                    <div class="card course-card border-info">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">فیزیک گرما نظام‌الدین بیرجندی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course12.jpg" class="img-fluid w-100 course-img" alt="فیزیک گرما">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-info me-2"></i>مباحث دما و گرما</li>
+                                <li class="mb-2"><i class="fas fa-check text-info me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-info me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">متوسط</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">30 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course12.html" class="btn btn-info py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره الکتریسیته ساکن -->
+                <div class="col">
+                    <div class="card course-card border-primary">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">الکتریسیته ساکن اسماعیل جزری</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course13.jpg" class="img-fluid w-100 course-img" alt="الکتریسیته ساکن">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>مباحث الکتریسیته ساکن</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">40 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course13.html" class="btn btn-primary py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره الکتریسیته جاری -->
+                <div class="col">
+                    <div class="card course-card border-success">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">الکتریسیته جاری محمد بن عیسی ماهانی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course14.jpg" class="img-fluid w-100 course-img" alt="الکتریسیته جاری">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>مباحث الکتریسیته جاری</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-success me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">45 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course14.html" class="btn btn-success py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره مغناطیس -->
+                <div class="col">
+                    <div class="card course-card border-info">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">مغناطیس احمد بن رسته</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course15.jpg" class="img-fluid w-100 course-img" alt="مغناطیس">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-info me-2"></i>مباحث مغناطیس دبیرستان</li>
+                                <li class="mb-2"><i class="fas fa-check text-info me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-info me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">متوسط</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">35 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course15.html" class="btn btn-info py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره سینماتیک -->
+                <div class="col">
+                    <div class="card course-card border-warning">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">سینماتیک عبدالرحمن خازنی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course16.jpg" class="img-fluid w-100 course-img" alt="سینماتیک">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>مباحث سینماتیک و حرکت</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-warning me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">مقدماتی</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">30 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course16.html" class="btn btn-warning py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره دینامیک -->
+                <div class="col">
+                    <div class="card course-card border-danger">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">دینامیک خواجه نصیرالدین طوسی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course17.jpg" class="img-fluid w-100 course-img" alt="دینامیک">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>مباحث دینامیک و نیرو</li>
+                                <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-danger me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">50 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course17.html" class="btn btn-danger py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره مکانیک نوسان -->
+                <div class="col">
+                    <div class="card course-card border-primary">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">مکانیک نوسان کمال‌الدین فارسی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course18.jpg" class="img-fluid w-100 course-img" alt="مکانیک نوسان">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>مباحث مکانیک نوسانگر</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">متوسط</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">35 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course18.html" class="btn btn-primary py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره نور و امواج -->
+                <div class="col">
+                    <div class="card course-card border-success">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">نور و امواج ابن هیثم</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course19.jpg" class="img-fluid w-100 course-img" alt="نور و امواج">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>مباحث امواج و نور</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-success me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">40 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course19.html" class="btn btn-success py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره فیزیک اتمی -->
+                <div class="col">
+                    <div class="card course-card border-info">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">فیزیک اتمی ابوسهل کوهی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course20.jpg" class="img-fluid w-100 course-img" alt="فیزیک اتمی">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-info me-2"></i>مباحث فیزیک اتم و هسته</li>
+                                <li class="mb-2"><i class="fas fa-check text-info me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-info me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">45 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course20.html" class="btn btn-info py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دوره زمین شناسی -->
+                <div class="col">
+                    <div class="card course-card border-warning">
+                        <div class="card-header text-white text-center py-3">
+                            <h4 class="course-title mb-0">زمین شناسی ابوجعفر خوارزمی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course21.jpg" class="img-fluid w-100 course-img" alt="زمین شناسی">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>مباحث زمین شناسی</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>سوالات کنکور سراسری</li>
+                                <li><i class="fas fa-check text-warning me-2"></i>جزوه + تمرین و نکات</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>سطح:</small>
+                                    <small class="fw-bold">مقدماتی</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>مدت:</small>
+                                    <small class="fw-bold">30 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small>محتوا:</small>
+                                    <small class="fw-bold">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course21.html" class="btn btn-warning py-2">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
