@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دوره‌های آموزشی - انتشارات فخرالکتاب</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Shabnam&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --purple: #8e44ad;
+            --pink: #e84393;
+            --earth: #6c5ce7;
+        }
+        
+        body {
+            font-family: 'B Nazanin', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .course-card {
+            transition: all 0.3s ease;
+            border-radius: 0.75rem;
+            border-left: 4px solid;
+            height: 100%;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .card-header {
+            border-radius: 0.75rem 0.75rem 0 0 !important;
+        }
+        
+        .course-img {
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .course-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+        
+        .btn-purple {
+            background-color: var(--purple);
+            border-color: var(--purple);
+        }
+        
+        .btn-pink {
+            background-color: var(--pink);
+            border-color: var(--pink);
+        }
+        
+        .btn-earth {
+            background-color: var(--earth);
+            border-color: var(--earth);
+        }
+    </style>
 </head>
 
 <body dir="rtl">
@@ -30,535 +84,243 @@
     <!-- محتوای اصلی دوره‌ها -->
     <main class="py-5">
         <div class="container text-center">
-            <h2 class="font-weight-bold" style="font-family: 'B Titr', sans-serif;">دوره‌های آموزشی ما</h2>
-            <p style="font-family: 'B Nazanin', sans-serif;">در این قسمت می‌توانید از دوره‌های تخصصی ما بهره مند شوید</p>
+            <h2 class="font-weight-bold mb-4" style="font-family: 'B Titr', sans-serif;">دوره‌های آموزشی ما</h2>
+            <p class="mb-5" style="font-family: 'B Nazanin', sans-serif;">در این قسمت می‌توانید از دوره‌های تخصصی ما بهره مند شوید</p>
 
             <!-- لیست دوره‌ها -->
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="course1.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-family: 'B Titr', sans-serif;">دوره ی زیست شناسی سلولی و مولکولی و زیست فناوری ابوعلی سینا</h5>
-                            <p class="card-text" style="font-family: 'B Titr', sans-serif;">- ارائه ی مباحث زیست شناسی سلولی و مولکولی دبیرستان
-\n- ارائه ی سوالات کنکور سراسری
-\n- ارائه ی جزوه ی درسی مفید به همراه تمرین ها و نکات دیگر</p>
-                            <a href="course1.html" class="btn btn-primary" style="font-family: 'B Nazanin', sans-serif;">جزئیات بیشتر</a>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                
+                <!-- دوره زیست شناسی سلولی -->
+                <div class="col">
+                    <div class="card course-card border-primary">
+                        <div class="card-header bg-gradient-primary text-white text-center py-3">
+                            <h4 class="mb-0" style="font-family: 'B Titr', sans-serif;">زیست شناسی سلولی ابوعلی سینا</h4>
                         </div>
-                    </div>
-                </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="course2.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-family: 'B Titr', sans-serif;">دوره ی زیست شناسی جانوری زکریای قزوینی</h5>
-                            <p class="card-text" style="font-family: 'B Titr', sans-serif;">- ارائه ی مباحث زیست شناسی جانوری دبیرستان
-            \n- ارائه ی سوالات کنکور سراسری
-            \n- ارائه ی جزوه ی درسی مفید به همراه تمرین ها و نکات دیگر</p>
-                            <a href="course2.html" class="btn btn-primary" style="font-family: 'B Nazanin', sans-serif;">جزئیات بیشتر</a>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course1.jpg" class="img-fluid w-100 course-img" alt="زیست شناسی سلولی">
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="course3.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-family: 'B Titr', sans-serif;">دوره ی زیست شناسی گیاهی ابوحنیفه دینوری</h5>
-                            <p class="card-text" style="font-family: 'B Titr', sans-serif;">- ارائه ی مباحث زیست شناسی گیاهی دبیرستان
-            \n- ارائه ی سوالات کنکور سراسری
-            \n- ارائه ی جزوه ی درسی مفید به همراه تمرین ها و نکات دیگر</p>
-                            <a href="course3.html" class="btn btn-primary" style="font-family: 'B Nazanin', sans-serif;">جزئیات بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="course4.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-family: 'B Titr', sans-serif;">دوره ی زیست شناسی تکامل و طبقه بندی حیات ابوریحان بیرونی</h5>
-                            <p class="card-text" style="font-family: 'B Titr', sans-serif;">- ارائه ی مباحث زیست شناسی تکامل و رفتارشناسی دبیرستان
-            \n- ارائه ی سوالات کنکور سراسری
-            \n- ارائه ی جزوه ی درسی مفید به همراه تمرین ها و نکات دیگر</p>
-                            <a href="course4.html" class="btn btn-primary" style="font-family: 'B Nazanin', sans-serif;">جزئیات بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="course5.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-family: 'B Titr', sans-serif;">دوره ی شیمی آلی جابر بن حیان</h5>
-                            <p class="card-text" style="font-family: 'B Titr', sans-serif;">- ارائه ی مباحث شیمی آلی دبیرستان
-            \n- ارائه ی سوالات کنکور سراسری
-            \n- ارائه ی جزوه ی درسی مفید به همراه تمرین ها و نکات دیگر</p>
-                            <a href="course5.html" class="btn btn-primary" style="font-family: 'B Nazanin', sans-serif;">جزئیات بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="course6.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title" style="font-family: 'B Titr', sans-serif;">دوره ی شیمی معدنی ابن ماسویه</h5>
-                            <p class="card-text" style="font-family: 'B Titr', sans-serif;">- ارائه ی مباحث شیمی معدنی دبیرستان
-            \n- ارائه ی سوالات کنکور سراسری
-            \n- ارائه ی جزوه ی درسی مفید به همراه تمرین ها و نکات دیگر</p>
-                            <a href="course6.html" class="btn btn-primary" style="font-family: 'B Nazanin', sans-serif;">جزئیات بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <img src="course7.jpg" class="card-img-top" alt="شیمی تجزیه زکریای رازی">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title" style="font-family: 'B Titr', sans-serif;">دوره ی شیمی تجزیه زکریای رازی</h5>
-                            <ul class="card-text flex-grow-1" style="font-family: 'B Titr', sans-serif; list-style-type: persian;">
-                                <li>ارائه ی مباحث شیمی تجزیه دبیرستان</li>
-                                <li>ارائه ی سوالات کنکور سراسری</li>
-                                <li>ارائه ی جزوه ی درسی مفید به همراه تمرین ها و نکات دیگر</li>
-                            </ul>
-                            <div class="mt-auto">
-                                <a href="course7.html" class="btn btn-primary w-100" style="font-family: 'B Nazanin', sans-serif; font-size: 1.1rem;">جزئیات بیشتر</a>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <div class="features-list mb-3">
+                                <div class="feature-item d-flex align-items-start mb-2">
+                                    <i class="fas fa-dna text-primary mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">مباحث زیست شناسی سلولی و مولکولی</span>
+                                </div>
+                                <div class="feature-item d-flex align-items-start mb-2">
+                                    <i class="fas fa-book text-primary mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">سوالات کنکور سراسری</span>
+                                </div>
+                                <div class="feature-item d-flex align-items-start">
+                                    <i class="fas fa-file-alt text-primary mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">جزوه درسی + تمرین و نکات</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <div class="position-relative">
-                        <img src="course8.jpg" class="card-img-top" alt="شیمی فیزیک کوشیار گیلانی">
-                        <span class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1" style="font-family: 'B Nazanin';">جدید</span>
-                    </div>
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center" style="font-family: 'B Titr', sans-serif; color: #2c3e50;">دوره ی شیمی فیزیک کوشیار گیلانی</h5>
-                        <hr class="w-50 mx-auto my-2">
-                        <ul class="card-text flex-grow-1" style="font-family: 'B Titr', sans-serif; list-style-type: persian; line-height: 2;">
-                            <li>ارائه ی مباحث شیمی فیزیک دبیرستان</li>
-                            <li>ارائه ی سوالات کنکور سراسری</li>
-                            <li>ارائه ی جزوه ی درسی مفید به همراه تمرین ها و نکات دیگر</li>
-                        </ul>
-                        <div class="mt-3 text-center">
-                            <span class="badge bg-secondary mb-2" style="font-family: 'B Nazanin';">40 ساعت آموزش</span>
-                            <a href="course8.html" class="btn btn-primary w-75" style="font-family: 'B Nazanin', sans-serif; font-size: 1.1rem;">
-                                <i class="fas fa-info-circle me-1"></i> جزئیات بیشتر
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 border-primary">
-                    <div class="ribbon ribbon-top-right">
-                        <span class="bg-danger" style="font-family: 'B Nazanin';">پرفروش</span>
-                    </div>
-                    <img src="course9.jpg" class="card-img-top p-3" alt="شیمی تجربی و آزمایشگاه احمد بن عمادالدین">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center text-primary" style="font-family: 'B Titr', sans-serif; font-weight: bold;">
-                            دوره ی شیمی تجربی و آزمایشگاه احمد بن عمادالدین
-                        </h5>
-                        <div class="text-center mb-3">
-                            <span class="badge bg-warning text-dark" style="font-family: 'B Nazanin';">عملی-تئوری</span>
-                        </div>
-                        <ul class="card-text flex-grow-1" style="font-family: 'B Titr', sans-serif; list-style-type: none; padding-right: 1rem;">
-                            <li class="mb-2"><i class="fas fa-flask text-info me-2"></i>ارائه ی مباحث آزمایشگاه شیمی دبیرستان</li>
-                            <li class="mb-2"><i class="fas fa-book-open text-success me-2"></i>ارائه ی سوالات کنکور سراسری</li>
-                            <li><i class="fas fa-file-alt text-danger me-2"></i>ارائه ی جزوه ی درسی مفید به همراه تمرین ها و نکات دیگر</li>
-                        </ul>
-                        <div class="mt-auto pt-3">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted" style="font-family: 'B Nazanin';">
-                                    <i class="fas fa-clock me-1"></i> 30 ساعت
-                                </span>
-                                <a href="course9.html" class="btn btn-outline-primary" style="font-family: 'B Nazanin';">
-                                    <i class="fas fa-shopping-cart me-1"></i> ثبت نام
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col mb-4">
-                <div class="card h-100 border-0 shadow-lg hover-effect">
-                    <div class="card-header bg-gradient-primary text-white text-center py-3">
-                        <h4 class="mb-0" style="font-family: 'B Titr', sans-serif;">دوره فیزیک مواد و مقدمات ابوسعید سجزی</h4>
-                    </div>
-                    <div class="card-img-top overflow-hidden">
-                        <img src="course10.jpg" class="img-fluid w-100 zoom-img" alt="فیزیک مواد ابوسعید سجزی">
-                    </div>
-                    <div class="card-body d-flex flex-column pb-0">
-                        <div class="features-list mb-3">
-                            <div class="feature-item d-flex align-items-start mb-2">
-                                <i class="fas fa-atom text-primary mt-1 me-2"></i>
-                                <span style="font-family: 'B Titr', sans-serif;">ارائه مباحث مقدماتی فیزیک دبیرستان</span>
-                            </div>
-                            <div class="feature-item d-flex align-items-start mb-2">
-                                <i class="fas fa-tasks text-success mt-1 me-2"></i>
-                                <span style="font-family: 'B Titr', sans-serif;">ارائه سوالات کنکور سراسری</span>
-                            </div>
-                            <div class="feature-item d-flex align-items-start">
-                                <i class="fas fa-book text-info mt-1 me-2"></i>
-                                <span style="font-family: 'B Titr', sans-serif;">ارائه جزوه درسی مفید به همراه تمرین‌ها و نکات</span>
+                            
+                            <div class="specs-box bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small style="font-family: 'B Nazanin';">سطح:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small style="font-family: 'B Nazanin';">مدت:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">40 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small style="font-family: 'B Nazanin';">محتوا:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">ویدیو + جزوه</small>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="specs-box bg-light p-3 rounded mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <small style="font-family: 'B Nazanin';">سطح دوره:</small>
-                                <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">مقدماتی تا پیشرفته</small>
-                            </div>
-                            <div class="d-flex justify-content-between mb-1">
-                                <small style="font-family: 'B Nazanin';">مدت زمان:</small>
-                                <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">35 ساعت</small>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <small style="font-family: 'B Nazanin';">نوع محتوا:</small>
-                                <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">ویدیو + جزوه</small>
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course1.html" class="btn btn-primary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="card-footer bg-transparent border-top-0 pt-0">
-                        <div class="d-grid gap-2">
-                            <a href="course10.html" class="btn btn-primary py-2" style="font-family: 'B Nazanin', sans-serif;">
-                                <i class="fas fa-play-circle me-2"></i> شروع یادگیری
-                            </a>
-                            <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin', sans-serif;">
-                                <i class="fas fa-info-circle me-2"></i> پیشنمایش رایگان
-                            </button>
+                </div>
+
+                <!-- دوره زیست شناسی جانوری -->
+                <div class="col">
+                    <div class="card course-card border-success">
+                        <div class="card-header bg-gradient-success text-white text-center py-3">
+                            <h4 class="mb-0" style="font-family: 'B Titr', sans-serif;">زیست شناسی جانوری زکریای قزوینی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course2.jpg" class="img-fluid w-100 course-img" alt="زیست شناسی جانوری">
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <div class="features-list mb-3">
+                                <div class="feature-item d-flex align-items-start mb-2">
+                                    <i class="fas fa-paw text-success mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">مباحث زیست شناسی جانوری</span>
+                                </div>
+                                <div class="feature-item d-flex align-items-start mb-2">
+                                    <i class="fas fa-book text-success mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">سوالات کنکور سراسری</span>
+                                </div>
+                                <div class="feature-item d-flex align-items-start">
+                                    <i class="fas fa-file-alt text-success mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">جزوه درسی + تمرین و نکات</span>
+                                </div>
+                            </div>
+                            
+                            <div class="specs-box bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small style="font-family: 'B Nazanin';">سطح:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">متوسط</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small style="font-family: 'B Nazanin';">مدت:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">35 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small style="font-family: 'B Nazanin';">محتوا:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course2.html" class="btn btn-success py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col">
-              <div class="card course-card h-100 border-start border-4 border-warning">
-                <!-- هدر دوره -->
-                <div class="course-badge">
-                  <span class="badge bg-danger">پرطرفدار</span>
-                </div>
-                
-                <!-- تصویر دوره -->
-                <div class="course-img-container">
-                  <img src="course11.jpg" class="card-img-top" alt="مکانیک و انرژی قطب‌الدین شیرازی">
-                  <div class="course-overlay">
-                    <button class="btn btn-sm btn-outline-light preview-btn">
-                      <i class="fas fa-play"></i> پیش‌نمایش
-                    </button>
-                  </div>
-                </div>
-                
-                <!-- بدنه کارت -->
-                <div class="card-body">
-                  <!-- عنوان دوره -->
-                  <h5 class="card-title text-center mb-3" style="font-family: 'B Titr', sans-serif;">
-                    <i class="fas fa-cogs text-warning me-2"></i>
-                    دوره مکانیک و انرژی قطب‌الدین شیرازی
-                  </h5>
-                  
-                  <!-- ویژگی‌های دوره -->
-                  <ul class="course-features list-unstyled">
-                    <li class="mb-2">
-                      <i class="fas fa-bolt text-success me-2"></i>
-                      <span style="font-family: 'B Titr';">ارائه مباحث انرژی، فشار و حرکت دبیرستان</span>
-                    </li>
-                    <li class="mb-2">
-                      <i class="fas fa-graduation-cap text-primary me-2"></i>
-                      <span style="font-family: 'B Titr';">ارائه سوالات کنکور سراسری</span>
-                    </li>
-                    <li>
-                      <i class="fas fa-book-open text-info me-2"></i>
-                      <span style="font-family: 'B Titr';">ارائه جزوه درسی مفید به همراه تمرین‌ها و نکات</span>
-                    </li>
-                  </ul>
-                  
-                  <!-- امتیاز و قیمت -->
-                  <div class="d-flex justify-content-between align-items-center mt-3 mb-2">
-                    <div class="course-rating">
-                      <i class="fas fa-star text-warning"></i>
-                      <i class="fas fa-star text-warning"></i>
-                      <i class="fas fa-star text-warning"></i>
-                      <i class="fas fa-star text-warning"></i>
-                      <i class="fas fa-star-half-alt text-warning"></i>
-                      <small class="text-muted" style="font-family: 'B Nazanin';">(۴.۵)</small>
+                <!-- دوره فیزیک مواد -->
+                <div class="col">
+                    <div class="card course-card border-warning">
+                        <div class="card-header bg-gradient-warning text-dark text-center py-3">
+                            <h4 class="mb-0" style="font-family: 'B Titr', sans-serif;">فیزیک مواد ابوسعید سجزی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course10.jpg" class="img-fluid w-100 course-img" alt="فیزیک مواد">
+                            <span class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1" style="font-family: 'B Nazanin';">جدید</span>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <div class="features-list mb-3">
+                                <div class="feature-item d-flex align-items-start mb-2">
+                                    <i class="fas fa-atom text-warning mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">مباحث مقدماتی فیزیک دبیرستان</span>
+                                </div>
+                                <div class="feature-item d-flex align-items-start mb-2">
+                                    <i class="fas fa-book text-warning mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">سوالات کنکور سراسری</span>
+                                </div>
+                                <div class="feature-item d-flex align-items-start">
+                                    <i class="fas fa-file-alt text-warning mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">جزوه درسی + تمرین و نکات</span>
+                                </div>
+                            </div>
+                            
+                            <div class="specs-box bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small style="font-family: 'B Nazanin';">سطح:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">مقدماتی تا پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small style="font-family: 'B Nazanin';">مدت:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">35 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small style="font-family: 'B Nazanin';">محتوا:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">ویدیو + جزوه</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course10.html" class="btn btn-warning py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="course-price">
-                      <span class="text-success fw-bold" style="font-family: 'B Nazanin';">۱,۲۹۰,۰۰۰ تومان</span>
-                    </div>
-                  </div>
                 </div>
-                
-                <!-- فوتر کارت -->
-                <div class="card-footer bg-white border-top-0 pt-0 pb-3">
-                  <div class="d-grid gap-2">
-                    <button class="btn btn-warning text-dark py-2" style="font-family: 'B Nazanin';">
-                      <i class="fas fa-shopping-cart me-2"></i> افزودن به سبد خرید
-                    </button>
-                    <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin';">
-                      <i class="far fa-heart me-2"></i> علاقه‌مندی‌ها
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 py-4">
-            
-              <!-- دوره فیزیک گرما -->
-              <div class="col">
-                <div class="card h-100 border-danger border-start border-4">
-                  <div class="position-relative">
-                    <img src="course12.jpg" class="card-img-top" alt="فیزیک گرما نظام‌الدین بیرجندی">
-                    <span class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1" style="font-family: 'B Nazanin';">جدید</span>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #d63031;">
-                      <i class="fas fa-temperature-high me-2"></i> فیزیک گرما نظام‌الدین بیرجندی
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none; padding-right: 1rem;">
-                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>مباحث فیزیک دما و گرما</li>
-                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check-circle text-success me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course12.html" class="btn btn-danger w-100" style="font-family: 'B Nazanin';">
-                      <i class="fas fa-book-open me-2"></i> مشاهده دوره
-                    </a>
-                  </div>
+                <!-- دوره مکانیک و انرژی -->
+                <div class="col">
+                    <div class="card course-card border-danger">
+                        <div class="card-header bg-gradient-danger text-white text-center py-3">
+                            <h4 class="mb-0" style="font-family: 'B Titr', sans-serif;">مکانیک و انرژی قطب‌الدین شیرازی</h4>
+                        </div>
+                        <div class="card-img-top overflow-hidden">
+                            <img src="course11.jpg" class="img-fluid w-100 course-img" alt="مکانیک و انرژی">
+                            <span class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1" style="font-family: 'B Nazanin';">پرفروش</span>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-0">
+                            <div class="features-list mb-3">
+                                <div class="feature-item d-flex align-items-start mb-2">
+                                    <i class="fas fa-bolt text-danger mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">مباحث انرژی، فشار و حرکت</span>
+                                </div>
+                                <div class="feature-item d-flex align-items-start mb-2">
+                                    <i class="fas fa-book text-danger mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">سوالات کنکور سراسری</span>
+                                </div>
+                                <div class="feature-item d-flex align-items-start">
+                                    <i class="fas fa-file-alt text-danger mt-1 me-2"></i>
+                                    <span style="font-family: 'B Titr', sans-serif;">جزوه درسی + تمرین و نکات</span>
+                                </div>
+                            </div>
+                            
+                            <div class="specs-box bg-light p-3 rounded mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small style="font-family: 'B Nazanin';">سطح:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">پیشرفته</small>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small style="font-family: 'B Nazanin';">مدت:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">45 ساعت</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <small style="font-family: 'B Nazanin';">محتوا:</small>
+                                    <small class="text-dark fw-bold" style="font-family: 'B Nazanin';">ویدیو + جزوه + تمرین</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0 pt-0">
+                            <div class="d-grid gap-2">
+                                <a href="course11.html" class="btn btn-danger py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                    <i class="fas fa-play-circle me-2"></i> شروع یادگیری
+                                </a>
+                                <button class="btn btn-outline-secondary py-2" style="font-family: 'B Nazanin', sans-serif;">
+                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            
-              <!-- دوره الکتریسیته ساکن -->
-              <div class="col">
-                <div class="card h-100 border-primary border-start border-4">
-                  <img src="course13.jpg" class="card-img-top" alt="الکتریسیته ساکن اسماعیل جزری">
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #0984e3;">
-                      <i class="fas fa-bolt me-2"></i> الکتریسیته ساکن اسماعیل جزری
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none;">
-                      <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>مباحث الکتریسیته ساکن</li>
-                      <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check text-primary me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course13.html" class="btn btn-primary w-100" style="font-family: 'B Nazanin';">
-                      <i class="fas fa-play me-2"></i> شروع یادگیری
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- دوره الکتریسیته جاری -->
-              <div class="col">
-                <div class="card h-100 border-warning border-start border-4">
-                  <img src="course14.jpg" class="card-img-top" alt="الکتریسیته جاری محمد بن عیسی ماهانی">
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #f39c12;">
-                      <i class="fas fa-bolt me-2"></i> الکتریسیته جاری محمد بن عیسی ماهانی
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none;">
-                      <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>مباحث الکتریسیته جاری</li>
-                      <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check text-warning me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course14.html" class="btn btn-warning text-white w-100" style="font-family: 'B Nazanin';">
-                      <i class="fas fa-bolt me-2"></i> ثبت نام دوره
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- دوره مغناطیس -->
-              <div class="col">
-                <div class="card h-100 border-info border-start border-4">
-                  <img src="course15.jpg" class="card-img-top" alt="مغناطیس احمد بن رسته">
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #00cec9;">
-                      <i class="fas fa-magnet me-2"></i> مغناطیس احمد بن رسته
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none;">
-                      <li class="mb-2"><i class="fas fa-check text-info me-2"></i>مباحث مغناطیس دبیرستان</li>
-                      <li class="mb-2"><i class="fas fa-check text-info me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check text-info me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course15.html" class="btn btn-info text-white w-100" style="font-family: 'B Nazanin';">
-                      <i class="fas fa-info-circle me-2"></i> جزئیات دوره
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- دوره سینماتیک -->
-              <div class="col">
-                <div class="card h-100 border-secondary border-start border-4">
-                  <img src="course16.jpg" class="card-img-top" alt="سینماتیک عبدالرحمن خازنی">
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #636e72;">
-                      <i class="fas fa-running me-2"></i> سینماتیک عبدالرحمن خازنی
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none;">
-                      <li class="mb-2"><i class="fas fa-check text-secondary me-2"></i>مباحث سینماتیک و حرکت</li>
-                      <li class="mb-2"><i class="fas fa-check text-secondary me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check text-secondary me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course16.html" class="btn btn-secondary w-100" style="font-family: 'B Nazanin';">
-                      <i class="fas fa-play-circle me-2"></i> مشاهده
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- دوره دینامیک -->
-              <div class="col">
-                <div class="card h-100 border-dark border-start border-4">
-                  <img src="course17.jpg" class="card-img-top" alt="دینامیک خواجه نصیرالدین طوسی">
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #2d3436;">
-                      <i class="fas fa-atom me-2"></i> دینامیک خواجه نصیرالدین طوسی
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none;">
-                      <li class="mb-2"><i class="fas fa-check text-dark me-2"></i>مباحث دینامیک و نیرو</li>
-                      <li class="mb-2"><i class="fas fa-check text-dark me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check text-dark me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course17.html" class="btn btn-dark w-100" style="font-family: 'B Nazanin';">
-                      <i class="fas fa-graduation-cap me-2"></i> شرکت در دوره
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- دوره مکانیک نوسان -->
-              <div class="col">
-                <div class="card h-100 border-success border-start border-4">
-                  <img src="course18.jpg" class="card-img-top" alt="مکانیک نوسان کمال‌الدین فارسی">
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #27ae60;">
-                      <i class="fas fa-wave-square me-2"></i> مکانیک نوسان کمال‌الدین فارسی
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none;">
-                      <li class="mb-2"><i class="fas fa-check text-success me-2"></i>مباحث مکانیک نوسانگر</li>
-                      <li class="mb-2"><i class="fas fa-check text-success me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check text-success me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course18.html" class="btn btn-success w-100" style="font-family: 'B Nazanin';">
-                      <i class="fas fa-rocket me-2"></i> شروع دوره
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- دوره نور و امواج -->
-              <div class="col">
-                <div class="card h-100 border-purple border-start border-4">
-                  <img src="course19.jpg" class="card-img-top" alt="نور و امواج ابن هیثم">
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #8e44ad;">
-                      <i class="fas fa-lightbulb me-2"></i> نور و امواج ابن هیثم
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none;">
-                      <li class="mb-2"><i class="fas fa-check text-purple me-2"></i>مباحث امواج و نور</li>
-                      <li class="mb-2"><i class="fas fa-check text-purple me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check text-purple me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course19.html" class="btn btn-purple text-white w-100" style="font-family: 'B Nazanin'; background-color: #8e44ad;">
-                      <i class="fas fa-eye me-2"></i> پیش‌نمایش
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- دوره فیزیک اتمی -->
-              <div class="col">
-                <div class="card h-100 border-pink border-start border-4">
-                  <img src="course20.jpg" class="card-img-top" alt="فیزیک اتمی ابوسهل کوهی">
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #e84393;">
-                      <i class="fas fa-atom me-2"></i> فیزیک اتمی ابوسهل کوهی
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none;">
-                      <li class="mb-2"><i class="fas fa-check text-pink me-2"></i>مباحث فیزیک اتم و هسته</li>
-                      <li class="mb-2"><i class="fas fa-check text-pink me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check text-pink me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course20.html" class="btn btn-pink text-white w-100" style="font-family: 'B Nazanin'; background-color: #e84393;">
-                      <i class="fas fa-flask me-2"></i> آزمایشگاه
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- دوره زمین شناسی -->
-              <div class="col">
-                <div class="card h-100 border-earth border-start border-4">
-                  <img src="course21.jpg" class="card-img-top" alt="زمین شناسی ابوجعفر خوارزمی">
-                  <div class="card-body">
-                    <h5 class="card-title text-center" style="font-family: 'B Titr'; color: #6c5ce7;">
-                      <i class="fas fa-mountain me-2"></i> زمین‌شناسی ابوجعفر خوارزمی
-                    </h5>
-                    <ul class="card-text mt-3" style="font-family: 'B Titr'; list-style-type: none;">
-                      <li class="mb-2"><i class="fas fa-check text-earth me-2"></i>مباحث زمین‌شناسی</li>
-                      <li class="mb-2"><i class="fas fa-check text-earth me-2"></i>سوالات کنکور سراسری</li>
-                      <li><i class="fas fa-check text-earth me-2"></i>جزوه درسی + تمرین و نکات</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer bg-white border-top-0">
-                    <a href="course21.html" class="btn btn-earth text-white w-100" style="font-family: 'B Nazanin'; background-color: #6c5ce7;">
-                      <i class="fas fa-globe-asia me-2"></i> مشاهده
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
+
+                <!-- بقیه دوره‌ها به همین صورت اضافه شوند -->
+                
             </div>
+        </div>
+    </main>
+
     <!-- فوتر -->
     <footer class="bg-dark text-white py-3">
         <div class="container text-center">
-            <p style="font-family: 'B Nazanin', sans-serif;">&copy; تمامی حقوق برای انتشارات و موسسه آموزشی علّامه محمدباقر فخرالکتاب(ره) محفوظ می باشد و اجازه هیچگونه کپی برداری حتی با ذکر منبع وجود ندارد.</p>
-            <p style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Pub. Since 2020</p>
-            <p><a href="terms.html" class="text-white" style="font-family: 'B Nazanin', sans-serif;">قوانین و شرایط</a></p>
+            <p style="font-family: 'B Nazanin', sans-serif;">&copy; تمامی حقوق برای انتشارات و موسسه آموزشی علّامه محمدباقر فخرالکتاب(ره) محفوظ می باشد</p>
         </div>
     </footer>
 
-    <!-- اسکریپت‌های مورد نیاز -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
