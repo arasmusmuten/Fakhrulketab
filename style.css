@@ -1,31 +1,43 @@
-body {
-    font-family: 'Shabnam', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+/* فونت‌های سفارشی */
+@font-face {
+  font-family: "IRSXB";
+  src: url("IRANSansXBlack.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sahel";
+  src: url("Sahel-FD.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* هدر */
 header {
     background-color: #111;
     padding: 20px 0;
+    font-family: 'Sahel', sans-serif; /* استفاده از فونت فارسی */
 }
 
 header h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'IRSXB', 'Sahel', sans-serif; /* ترکیب فونت‌ها برای پشتیبان */
     font-weight: 700;
     font-size: 30px;
+    color: white; /* اضافه شد */
+    margin: 0; /* اضافه شد */
 }
 
 header .nav-item {
     margin-left: 20px;
+    display: inline-block; /* اضافه شد */
 }
 
 header .nav-link {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s; /* اضافه شد */
 }
 
 header .nav-link:hover {
@@ -37,18 +49,21 @@ main {
     padding: 40px 0;
     background-color: #fff;
     text-align: center;
+    font-family: 'Sahel', sans-serif; /* فونت فارسی */
 }
 
 main h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'IRSXB', 'Sahel', sans-serif;
     color: #111;
     font-size: 40px;
+    margin-bottom: 20px; /* اضافه شد */
 }
 
 main p {
     color: #555;
     font-size: 18px;
     margin-top: 20px;
+    line-height: 1.6; /* اضافه شد */
 }
 
 /* دکمه CTA */
@@ -56,6 +71,11 @@ main p {
     background-color: #f39c12;
     border: none;
     color: white;
+    padding: 10px 20px; /* اضافه شد */
+    border-radius: 4px; /* اضافه شد */
+    cursor: pointer; /* اضافه شد */
+    transition: background-color 0.3s; /* اضافه شد */
+    font-family: 'Sahel', sans-serif; /* اضافه شد */
 }
 
 .btn-warning:hover {
@@ -66,13 +86,24 @@ main p {
 footer {
     background-color: #111;
     color: white;
+    padding: 30px 0; /* اضافه شد */
+    text-align: center; /* اضافه شد */
+    font-family: 'Sahel', sans-serif; /* اضافه شد */
 }
 
 footer a {
     color: #f39c12;
     text-decoration: none;
+    transition: text-decoration 0.3s; /* اضافه شد */
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* کلاس‌های کمکی */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
