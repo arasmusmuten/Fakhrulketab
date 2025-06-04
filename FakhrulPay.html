@@ -1,1 +1,79 @@
 
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درگاه پرداخت رمز ارز</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            direction: rtl;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>پرداخت با رمز ارز</h1>
+        <p>مبلغ: <span id="amount">10</span> دلار</p>
+        <button onclick="initiatePayment()">پرداخت کنید</button>
+        <div id="paymentDetails" style="display: none; margin-top: 20px;">
+            <p>لطفاً مبلغ <span id="cryptoAmount"></span> <span id="cryptoType"></span> به آدرس زیر ارسال کنید:</p>
+            <p><strong id="walletAddress"></strong></p>
+            <p>شناسه پرداخت: <span id="paymentId"></span></p>
+        </div>
+    </div>
+
+    <script>
+        async function initiatePayment() {
+            const amount = document.getElementById('amount').textContent;
+            
+            // اینجا باید API Key خود را از NowPayments قرار دهید
+            const API_KEY = 'YOUR_NOWPAYMENTS_API_KEY';
+            const response = await fetch('https://api.nowpayments.io/v1/invoice', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-api-key': API_KEY
+                },
+                body: JSON.stringify({
+                    price_amount: amount,
+                    price_currency: 'usd',
+                    pay_currency: 'btc', // می‌توانید بیت‌کوین، اتریوم و... انتخاب کنید
+                    ipn_callback_url: 'https://yourwebsite.com/callback', // آدرس کال‌بک برای تایید پرداخت
+                    order_id: '12345', // شناسه سفارش شما
+                    order_description: 'پرداخت نمونه'
+                })
+            });
+
+            const data = await response.json();
+            
+            if (data && data.pay_address) {
+                document.getElementById('cryptoAmount').textContent = data.pay_amount;
+                document.getElementById('cryptoType').textContent = data.pay_currency.toUpperCase();
+                document.getElementById('walletAddress').textContent = data.pay_address;
+                document.getElementById('paymentId').textContent = data.payment_id;
+                document.getElementById('paymentDetails').style.display = 'block';
+            } else {
+                alert('خطا در ایجاد درگاه پرداخت!');
+            }
+        }
+    </script>
+</body>
+</html>
