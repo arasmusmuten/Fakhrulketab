@@ -4,48 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>درباره ما - انتشارات فخرالکتاب</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Shabnam&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- فونت‌ها -->
+    <link href="https://fonts.googleapis.com/css2?family=Shabnam&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- استایل داخلی سفارشی -->
+    <style>
+        body {
+            font-family: 'Shabnam', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: #ffd700;
+        }
+
+        .nav-link {
+            color: #f0f0f0 !important;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ffd700 !important;
+        }
+
+        main h2 {
+            color: #2c3e50;
+            font-weight: bold;
+            margin-top: 2rem;
+            border-right: 4px solid #ffc107;
+            padding-right: 10px;
+        }
+
+        main p {
+            font-size: 1.1rem;
+            line-height: 2.1;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            background: #1c1c1c;
+            color: #ddd;
+            font-size: 0.9rem;
+            padding-top: 20px;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .gold-border {
+            border: 1px solid #ffd700;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 
 <body dir="rtl">
     <!-- هدر -->
-    <header class="bg-dark text-white py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="font-weight-bold" style="font-family: 'B Titr', sans-serif;">انتشارات و موسسه آموزشی فخرالکتاب</h1>
+    <header class="py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <h1 class="mb-3 mb-md-0">انتشارات و موسسه آموزشی فخرالکتاب</h1>
             <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="index.html">خانه</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="courses.html">دوره‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="books.html">کتاب‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="about.html">درباره ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="contact.html">تماس با ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" style="font-family: 'B Titr', sans-serif;" href="login.html">ورود / ثبت‌نام</a></li>
+                <ul class="nav flex-wrap">
+                    <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">دوره‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link" href="books.html">کتاب‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">تماس با ما</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">ورود / ثبت‌نام</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- بدنه اصلی -->
     <main class="py-5">
-        <div class="container text-right">
-            <h2 class="font-weight-bold" style="font-family: 'B Titr', sans-serif;">درباره انتشارات فخرالکتاب</h2>
-            <p style="font-family: 'B Nazanin', sans-serif;">ما در فخرالکتاب به انتشار منابع علمی و آموزشی معتبر و تخصصی اهتمام داریم و مفتخر هستیم از سال 1400 تا کنون در حال ارائه خدمات با کیفیت آموزشی به دانش آموزان و دانشجویان عزیز ایران زمین هستیم. در سال 1404 به مناسبت نوبهاری دیگر در این سرزمین کهن، انتشارات فخرالکتاب تصمیم گرفت شاخه ی علمی جدیدی تحت عنوان فخرالکتاب آکادمیکس ایجاد کند تا در کنار تولید محتوای آموزشی و کمک آموزشی دبیرستان، برای آموزش عالی و دانشگاهیان عزیز نیز همراه و یاری موثر باشد.</p>
-            <h2 class="font-weight-bold" style="font-family: 'B Titr', sans-serif;">وجه تسمیه ی انتشارات فخرالکتاب</h2>
-            <p style="font-family: 'B Nazanin', sans-serif;">علامه محمدباقر فخرالکتاب صفی یاری منشی تبریزی(ره) از خوشنویسان و ادیبان ماندگار ایران زمین است که در طول حیات پربار خویشتن آثاری گرانبها و گوهرین برجای گذاشت. چند نسخه تصحیح از کلیله و دمنه و دیگر کتب وزین ادبی زبان فارسی از آثار ایشان است. نام ایشان همچنین در سیاهه ی خوشنویسان و اهل قلم شهیر ایران زمین آمده است. علامه فخرالکتاب در مرند زندگی می کرد و دبیر دیوان رسالت شاهزاده امامقلی میرزا ملک قاسمی از شاهزادگان قاجار و نوادگان فتحعلی شاه بود. ایشان سالیان دراز در دستگاه ایشان و دارالحکومه ی آذربایجان خدمت نمود و نهایتاً در دورن پهلوی اول دیدار فانی را وداع بگفت و چشم از جهان فرو بست. وظفیه ی خود دانستیم بار دیگر در این انتشارات بر آن باشیم تا نام مردان علمی و ادبی ایران زمین را احیاء کنیم و اجازه ندهیم طمعه ی دهان استعمارگران و خائنان ملت شوند تا دیگر سیاسیون دیگر دول خارجی جرئت نکنند نام ایشان را برای خود و مقاصد خود جعل کنند.</h2>
+        <div class="container gold-border">
+            <h2>درباره انتشارات فخرالکتاب</h2>
+            <p>
+                ما در فخرالکتاب به انتشار منابع علمی و آموزشی معتبر و تخصصی اهتمام داریم و مفتخر هستیم از سال ۱۴۰۰ تا کنون در حال ارائه خدمات با کیفیت آموزشی به دانش آموزان و دانشجویان عزیز ایران زمین هستیم...
+            </p>
+            <h2>وجه تسمیه انتشارات فخرالکتاب</h2>
+            <p>
+                علامه محمدباقر فخرالکتاب صفی یاری منشی تبریزی(ره) از خوشنویسان و ادیبان ماندگار ایران زمین است که در طول حیات پربار خویشتن آثاری گرانبها و گوهرین برجای گذاشت...
+            </p>
         </div>
     </main>
 
-
-    <footer class="bg-dark text-white py-3">
+    <!-- فوتر -->
+    <footer>
         <div class="container text-center">
-            <p style="font-family: 'B Nazanin', sans-serif;">&copy; تمامی حقوق برای انتشارات و موسسه آموزشی علّامه محمدباقر فخرالکتاب(ره) محفوظ می باشد و اجازه هیچگونه کپی برداری حتی با ذکر منبع وجود ندارد.</p>
-            <p style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Pub. Since 2020</p>
-            <p style="font-family: 'B Nazanin', sans-serif;"><a href="terms.html" class="text-white">قوانین و شرایط</a></p>
+            <p>© تمامی حقوق برای درگاه آموزشی فخرالکتاب محفوظ است.</p>
+            <p style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Portal. Since 2020</p>
+            <p><a href="terms.html">قوانین و شرایط</a></p>
         </div>
     </footer>
 
-    <!-- اسکریپت‌های مورد نیاز -->
+    <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
