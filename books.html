@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- آیکون‌های فونت آوسام -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* تنظیمات کلی فونت‌ها */
         @font-face {
@@ -24,91 +25,291 @@
             font-weight: normal;
             font-style: normal;
         }
-
+        
         :root {
-            --purple: #8e44ad;
-            --pink: #e84393;
-            --earth: #6c5ce7;
+            --primary-color: #2c3e50;
+            --secondary-color: #e67e22;
+            --accent-color: #f1c40f;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
         
         body {
             font-family: 'Sahel', sans-serif;
             background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
         }
         
         h1, h2, h3, h4, h5, h6,
-        .course-title,
+        .book-title,
         .nav-link {
             font-family: 'IRANSansX', sans-serif;
+            font-weight: 700;
         }
         
-        .course-card {
+        /* استایل هدر */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 8px;
             transition: all 0.3s ease;
-            border-radius: 0.75rem;
-            border-left: 4px solid;
-            height: 100%;
-            margin-bottom: 20px;
         }
         
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        /* استایل محتوای اصلی */
+        main {
+            padding: 60px 0;
+            background-color: #f5f7fa;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-header h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            right: 25%;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        /* استایل کارت کتاب‌ها */
+        .book-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
         .card-header {
-            border-radius: 0.75rem 0.75rem 0 0 !important;
+            border-radius: 0 !important;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            border-bottom: none;
         }
         
-        .course-title {
-            color: #000 !important;
+        .book-title {
+            color: white !important;
+            font-size: 1.3rem;
+            margin-bottom: 0;
         }
         
-        .course-img {
-            height: 180px;
-            object-fit: cover;
+        .book-img {
+            height: 250px;
+            object-fit: contain;
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+            transition: transform 0.5s ease;
         }
         
-        .course-badge {
+        .book-card:hover .book-img {
+            transform: scale(1.05);
+        }
+        
+        .card-body {
+            padding: 25px;
+            background-color: white;
+        }
+        
+        .book-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        
+        .book-features li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .book-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 2;
+            right: 0;
+            color: var(--accent-color);
         }
         
-        .btn-purple {
-            background-color: var(--purple);
-            border-color: var(--purple);
+        .card-footer {
+            background-color: white;
+            border-top: none;
+            padding: 0 25px 25px;
         }
         
-        .btn-pink {
-            background-color: var(--pink);
-            border-color: var(--pink);
+        .btn-book {
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .btn-earth {
-            background-color: var(--earth);
-            border-color: var(--earth);
+        .btn-book i {
+            margin-left: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a252f;
+            border-color: #1a252f;
+        }
+        
+        .btn-preview {
+            border: 2px solid #ddd;
+            background: white;
+            color: #666;
+        }
+        
+        .btn-preview:hover {
+            background: #f8f9fa;
+            border-color: #ccc;
+        }
+        
+        /* استایل فوتر */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            padding: 40px 0 20px;
+            color: white;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
         }
         
         footer a {
-            font-family: 'Sahel', sans-serif;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        .social-icons {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* رسپانسیو */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            
+            .nav {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-item {
+                margin: 5px 0;
+            }
+            
+            .page-header h2 {
+                font-size: 2rem;
+            }
+            
+            .book-img {
+                height: 200px;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- هدر -->
-    <header class="bg-dark text-white py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="font-weight-bold">درگاه آموزشی فخرالکتاب</h1>
+    <header class="text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <h1 class="font-weight-bold mb-0">درگاه آموزشی فخرالکتاب</h1>
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white" href="index.html">خانه</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="courses.html">دوره‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="books.html">کتاب‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="FakhrulPay.html">فخرالکتاب پِی</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="about.html">درباره ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">تماس با ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="login.html">ورود / ثبت‌نام</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html"><i class="fas fa-home ml-2"></i>خانه</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="courses.html"><i class="fas fa-graduation-cap ml-2"></i>دوره‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="books.html"><i class="fas fa-book ml-2"></i>کتاب‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="FakhrulPay.html"><i class="fas fa-wallet ml-2"></i>فخرالکتاب پِی</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html"><i class="fas fa-info-circle ml-2"></i>درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html"><i class="fas fa-envelope ml-2"></i>تماس با ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="login.html"><i class="fas fa-user ml-2"></i>ورود / ثبت‌نام</a></li>
                 </ul>
             </nav>
         </div>
@@ -117,35 +318,35 @@
     <!-- محتوای اصلی کتاب‌ها -->
     <main class="py-5">
         <div class="container">
-            <div class="text-center mb-5">
+            <div class="page-header">
                 <h2 class="font-weight-bold">کتاب‌های درگاه آموزشی فخرالکتاب</h2>
-                <p>در این بخش می‌توانید مجموعه کتاب‌های ما را مشاهده کنید.</p>
+                <p>مجموعه‌ای از بهترین منابع آموزشی برای موفقیت در آزمون‌ها و تسلط بر مفاهیم درسی</p>
             </div>
 
             <!-- لیست کتاب‌ها -->
-            <div class="row">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <!-- کتاب 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card course-card border-primary">
-                        <div class="card-header bg-primary text-white text-center py-3">
-                            <h4 class="course-title mb-0">زیست شناسی دبیرستان با رویکرد ریزبینانه</h4>
+                <div class="col">
+                    <div class="card book-card h-100">
+                        <div class="card-header">
+                            <h4 class="book-title mb-0">زیست شناسی دبیرستان با رویکرد ریزبینانه</h4>
                         </div>
-                        <div class="card-img-top overflow-hidden">
-                            <img src="bio cover.png" class="img-fluid w-100 h-170">
+                        <div class="card-img-top overflow-hidden text-center">
+                            <img src="bio cover.png" class="book-img" alt="زیست شناسی دبیرستان">
                         </div>
-                        <div class="card-body d-flex flex-column pb-0">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>زیست شناسی جامع دبیرستان</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>درسنامه مختصر و مفید و کامل برای تسلط بر نکات زیست شناسی دبیرستان</li>
+                        <div class="card-body">
+                            <ul class="book-features">
+                                <li>زیست شناسی جامع دبیرستان</li>
+                                <li>درسنامه مختصر و مفید و کامل برای تسلط بر نکات زیست شناسی دبیرستان</li>
                             </ul>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0 pt-0">
-                            <div class="d-grid gap-2">
-                                <a href="course1.html" class="btn btn-primary py-2">
-                                    <i class="fas fa-shopping-cart me-2"></i> افزودن به سبد خرید
+                        <div class="card-footer">
+                            <div class="d-grid gap-3">
+                                <a href="#" class="btn btn-primary btn-book">
+                                    <i class="fas fa-shopping-cart"></i> افزودن به سبد خرید
                                 </a>
-                                <button class="btn btn-outline-secondary py-2">
-                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                <button class="btn btn-preview btn-book">
+                                    <i class="fas fa-info-circle"></i> پیشنمایش
                                 </button>
                             </div>
                         </div>
@@ -153,27 +354,27 @@
                 </div>
 
                 <!-- کتاب 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card course-card border-primary">
-                        <div class="card-header bg-secondary text-white text-center py-3">
-                            <h4 class="course-title mb-0">مسائل زیست شناسی دبیرستان</h4>
+                <div class="col">
+                    <div class="card book-card h-100">
+                        <div class="card-header">
+                            <h4 class="book-title mb-0">مسائل زیست شناسی دبیرستان</h4>
                         </div>
-                        <div class="card-img-top overflow-hidden">
-                            <img src="masael bio cover.png" class="img-fluid w-100 h-170">
+                        <div class="card-img-top overflow-hidden text-center">
+                            <img src="masael bio cover.png" class="book-img" alt="مسائل زیست شناسی">
                         </div>
-                        <div class="card-body d-flex flex-column pb-0">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>سوالات چالش برانگیز زیست شناسی دبیرستان</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>برگرفته از سوالات کنکور سراسری و دیگر آزمون ها</li>
+                        <div class="card-body">
+                            <ul class="book-features">
+                                <li>سوالات چالش برانگیز زیست شناسی دبیرستان</li>
+                                <li>برگرفته از سوالات کنکور سراسری و دیگر آزمون‌ها</li>
                             </ul>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0 pt-0">
-                            <div class="d-grid gap-2">
-                                <a href="course1.html" class="btn btn-primary py-2">
-                                    <i class="fas fa-shopping-cart me-2"></i> افزودن به سبد خرید
+                        <div class="card-footer">
+                            <div class="d-grid gap-3">
+                                <a href="#" class="btn btn-primary btn-book">
+                                    <i class="fas fa-shopping-cart"></i> افزودن به سبد خرید
                                 </a>
-                                <button class="btn btn-outline-secondary py-2">
-                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                <button class="btn btn-preview btn-book">
+                                    <i class="fas fa-info-circle"></i> پیشنمایش
                                 </button>
                             </div>
                         </div>
@@ -181,28 +382,28 @@
                 </div>
 
                 <!-- کتاب 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card course-card border-primary">
-                        <div class="card-header bg-success text-white text-center py-3">
-                            <h4 class="course-title mb-0">خلاصه درس آناتومی</h4>
+                <div class="col">
+                    <div class="card book-card h-100">
+                        <div class="card-header">
+                            <h4 class="book-title mb-0">خلاصه درس آناتومی</h4>
                         </div>
-                        <div class="card-img-top overflow-hidden">
-                            <img src="anatomy cover.png" class="img-fluid w-100 h-170">
+                        <div class="card-img-top overflow-hidden text-center">
+                            <img src="anatomy cover.png" class="book-img" alt="خلاصه درس آناتومی">
                         </div>
-                        <div class="card-body d-flex flex-column pb-0">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>مجموعه نکات درسی و بالینی علوم تشریحی نظری 1، 2، 3</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>به همراه سوالات تالیفی و کنکور علوم پایه به تفکیک مبحث</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>مخصوص داوطلبان رشته ی دندانپزشکی</li>
+                        <div class="card-body">
+                            <ul class="book-features">
+                                <li>مجموعه نکات درسی و بالینی علوم تشریحی نظری 1، 2، 3</li>
+                                <li>به همراه سوالات تالیفی و کنکور علوم پایه به تفکیک مبحث</li>
+                                <li>مخصوص داوطلبان رشته دندانپزشکی</li>
                             </ul>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0 pt-0">
-                            <div class="d-grid gap-2">
-                                <a href="course1.html" class="btn btn-primary py-2">
-                                    <i class="fas fa-shopping-cart me-2"></i> افزودن به سبد خرید
+                        <div class="card-footer">
+                            <div class="d-grid gap-3">
+                                <a href="#" class="btn btn-primary btn-book">
+                                    <i class="fas fa-shopping-cart"></i> افزودن به سبد خرید
                                 </a>
-                                <button class="btn btn-outline-secondary py-2">
-                                    <i class="fas fa-info-circle me-2"></i> پیشنمایش
+                                <button class="btn btn-preview btn-book">
+                                    <i class="fas fa-info-circle"></i> پیشنمایش
                                 </button>
                             </div>
                         </div>
@@ -213,11 +414,17 @@
     </main>
 
     <!-- فوتر -->
-    <footer class="bg-dark text-white py-3">
+    <footer class="bg-dark text-white py-4">
         <div class="container text-center">
-            <p>&copy; تمامی حقوق برای درگاه آموزشی فخرالکتاب محفوظ می باشد و اجازه هیچگونه کپی برداری حتی با ذکر منبع وجود ندارد.</p>
-            <p style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Educational Portal. Since 2020</p>
-            <p><a href="terms.html" class="text-white">قوانین و شرایط</a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="mb-2">&copy; تمامی حقوق برای درگاه آموزشی فخرالکتاب محفوظ می‌باشد.</p>
+            <p class="mb-2" style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Educational Portal. Since 2020</p>
+            <p class="mb-0"><a href="terms.html">قوانین و شرایط استفاده</a></p>
         </div>
     </footer>
 
