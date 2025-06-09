@@ -1,99 +1,118 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <header class="bg-dark text-white py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="font-weight-bold">درگاه آموزشی فخرالکتاب</h1>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white" href="index.html">خانه</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="courses.html">دوره‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="books.html">کتاب‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="FakhrulPay.html">فخرالکتاب پِی</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="about.html">درباره ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">تماس با ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="login.html">ورود / ثبت‌نام</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>درگاه پرداخت مبتنی بر رمز ارز فخرالکتاب</title>
+    <!-- لینک فونت ایران‌سنس و ساحل -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- آیکون‌های فونت آوسام -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #6c5ce7;
-            --secondary: #a29bfe;
-            --dark: #2d3436;
-            --light: #f5f6fa;
-            --success: #00b894;
-            --gold: #fdcb6e;
+        /* تنظیمات کلی فونت‌ها */
+        @font-face {
+            font-family: "IRANSansX";
+            src: url("fonts/IRANSansX-Black.ttf") format("truetype");
+            font-weight: 900;
+            font-style: normal;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        @font-face {
+            font-family: "Sahel";
+            src: url("fonts/Sahel-FD.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e67e22;
+            --accent-color: #f1c40f;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
         }
         
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: var(--light);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            font-family: 'Sahel', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        h1, h2, h3, h4, h5, h6,
+        .nav-link {
+            font-family: 'IRANSansX', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* استایل هدر */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        /* استایل محتوای اصلی */
+        main {
+            padding: 60px 0;
+            min-height: calc(100vh - 150px);
         }
         
         .payment-container {
-            width: 100%;
             max-width: 800px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .payment-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                rgba(108, 92, 231, 0.1),
-                rgba(108, 92, 231, 0),
-                rgba(108, 92, 231, 0.1)
-            );
-            transform: rotate(30deg);
-            z-index: -1;
         }
         
         .payment-header {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             padding: 25px;
             text-align: center;
-            position: relative;
+            color: white;
         }
         
         .payment-header h1 {
             font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
         
         .payment-header p {
             opacity: 0.9;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         
         .payment-body {
@@ -101,14 +120,14 @@
         }
         
         .payment-amount {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            background: rgba(44, 62, 80, 0.05);
+            border-radius: 10px;
             padding: 20px;
             margin-bottom: 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(44, 62, 80, 0.1);
         }
         
         .amount-info {
@@ -125,16 +144,17 @@
         .amount-value {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--gold);
+            color: var(--primary-color);
         }
         
         .amount-currency {
             font-size: 1.2rem;
             align-self: center;
-            background: rgba(253, 203, 110, 0.1);
+            background: rgba(241, 196, 15, 0.1);
             padding: 10px 15px;
             border-radius: 10px;
-            border: 1px solid var(--gold);
+            border: 1px solid var(--accent-color);
+            color: var(--primary-color);
         }
         
         .crypto-selector {
@@ -151,11 +171,12 @@
         .selector-title {
             font-size: 1.1rem;
             font-weight: 600;
+            color: var(--primary-color);
         }
         
         .selector-tabs {
             display: flex;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(44, 62, 80, 0.05);
             border-radius: 50px;
             padding: 3px;
         }
@@ -169,19 +190,20 @@
         }
         
         .tab.active {
-            background: var(--primary);
+            background: var(--primary-color);
+            color: white;
             font-weight: 600;
         }
         
         .crypto-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
             gap: 15px;
         }
         
         .crypto-option {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: white;
+            border: 1px solid rgba(44, 62, 80, 0.1);
             border-radius: 10px;
             padding: 15px;
             display: flex;
@@ -194,12 +216,12 @@
         .crypto-option:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
+            border-color: var(--primary-color);
         }
         
         .crypto-option.selected {
-            border-color: var(--success);
-            background: rgba(0, 184, 148, 0.1);
+            border-color: var(--success-color);
+            background: rgba(39, 174, 96, 0.1);
         }
         
         .crypto-icon {
@@ -213,6 +235,7 @@
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 3px;
+            color: var(--primary-color);
         }
         
         .crypto-symbol {
@@ -221,11 +244,11 @@
         }
         
         .payment-details {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            background: rgba(44, 62, 80, 0.05);
+            border-radius: 10px;
             padding: 20px;
             margin-top: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(44, 62, 80, 0.1);
             display: none;
         }
         
@@ -238,11 +261,13 @@
         .detail-label {
             opacity: 0.8;
             font-size: 0.9rem;
+            color: var(--primary-color);
         }
         
         .detail-value {
             font-weight: 600;
             font-family: 'Courier New', monospace;
+            color: var(--primary-color);
         }
         
         .qr-container {
@@ -257,6 +282,7 @@
             background: white;
             padding: 10px;
             border-radius: 10px;
+            border: 1px solid rgba(44, 62, 80, 0.1);
         }
         
         .payment-actions {
@@ -266,8 +292,8 @@
         }
         
         .btn {
-            padding: 15px 25px;
-            border-radius: 10px;
+            padding: 12px 25px;
+            border-radius: 30px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -275,10 +301,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'IRANSansX', sans-serif;
         }
         
         .btn-primary {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
             flex-grow: 1;
             margin-left: 15px;
@@ -286,17 +313,17 @@
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.4);
         }
         
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: white;
+            color: var(--primary-color);
+            border: 1px solid rgba(44, 62, 80, 0.2);
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(44, 62, 80, 0.05);
         }
         
         .timer {
@@ -304,7 +331,7 @@
             align-items: center;
             justify-content: center;
             margin-top: 20px;
-            color: var(--gold);
+            color: var(--accent-color);
             font-weight: 600;
         }
         
@@ -312,6 +339,45 @@
             margin-left: 8px;
         }
         
+        /* استایل فوتر */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            padding: 30px 0 20px;
+            color: white;
+        }
+        
+        .social-icons {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        footer a {
+            color: white;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        /* رسپانسیو */
         @media (max-width: 768px) {
             .payment-amount {
                 flex-direction: column;
@@ -324,7 +390,7 @@
             }
             
             .crypto-grid {
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             }
             
             .payment-actions {
@@ -335,117 +401,158 @@
                 margin-left: 0;
                 margin-top: 15px;
             }
+            
+            .payment-header h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <img src="pay.png" class="img-fluid w-40">
-    <div class="payment-container">
-        <div class="payment-header">
-            <h1>درگاه پرداخت مبتنی بر رمز ارز فخرالکتاب</h1>
-            <p>تراکنش امن و سریع با تکنولوژی بلاکچین</p>
+    <!-- هدر -->
+    <header class="text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <h1 class="font-weight-bold mb-0">درگاه آموزشی فخرالکتاب</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html"><i class="fas fa-home ml-2"></i>خانه</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="courses.html"><i class="fas fa-graduation-cap ml-2"></i>دوره‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="books.html"><i class="fas fa-book ml-2"></i>کتاب‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="FakhrulPay.html"><i class="fas fa-wallet ml-2"></i>فخرالکتاب پِی</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html"><i class="fas fa-info-circle ml-2"></i>درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html"><i class="fas fa-envelope ml-2"></i>تماس با ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="login.html"><i class="fas fa-user ml-2"></i>ورود / ثبت‌نام</a></li>
+                </ul>
+            </nav>
         </div>
-        
-        <div class="payment-body">
-            <div class="payment-amount">
-                <div class="amount-info">
-                    <span class="amount-label">مبلغ قابل پرداخت</span>
-                    <span class="amount-value">49.99</span>
-                </div>
-                <span class="amount-currency">USD</span>
-            </div>
-            
-            <div class="crypto-selector">
-                <div class="selector-header">
-                    <span class="selector-title">انتخاب رمز ارز</span>
-                    <div class="selector-tabs">
-                        <div class="tab active">همه</div>
-                        <div class="tab">پرطرفدار</div>
-                        <div class="tab">استیبل کوین</div>
-                    </div>
-                </div>
-                
-                <div class="crypto-grid">
-                    <div class="crypto-option selected">
-                        <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin" class="crypto-icon">
-                        <span class="crypto-name">بیت‌کوین</span>
-                        <span class="crypto-symbol">BTC</span>
-                    </div>
-                    
-                    <div class="crypto-option">
-                        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="crypto-icon">
-                        <span class="crypto-name">اتریوم</span>
-                        <span class="crypto-symbol">ETH</span>
-                    </div>
-                    
-                    <div class="crypto-option">
-                        <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="Tether" class="crypto-icon">
-                        <span class="crypto-name">تتر</span>
-                        <span class="crypto-symbol">USDT</span>
-                    </div>
-                    
-                    <div class="crypto-option">
-                        <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="Litecoin" class="crypto-icon">
-                        <span class="crypto-name">لایت‌کوین</span>
-                        <span class="crypto-symbol">LTC</span>
-                    </div>
-                    
-                    <div class="crypto-option">
-                        <img src="https://cryptologos.cc/logos/ripple-xrp-logo.png" alt="Ripple" class="crypto-icon">
-                        <span class="crypto-name">ریپل</span>
-                        <span class="crypto-symbol">XRP</span>
-                    </div>
-                    
-                    <div class="crypto-option">
-                        <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BNB" class="crypto-icon">
-                        <span class="crypto-name">بی‌ان‌بی</span>
-                        <span class="crypto-symbol">BNB</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="payment-details" id="paymentDetails">
-                <div class="detail-row">
-                    <span class="detail-label">مبلغ معادل:</span>
-                    <span class="detail-value" id="cryptoAmount">0.001452 BTC</span>
-                </div>
-                
-                <div class="detail-row">
-                    <span class="detail-label">آدرس کیف پول:</span>
-                    <span class="detail-value" id="walletAddress">3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5</span>
-                </div>
-                
-                <div class="detail-row">
-                    <span class="detail-label">شناسه پرداخت:</span>
-                    <span class="detail-value" id="paymentId">NP123456789</span>
-                </div>
-                
-                <div class="qr-container">
-                    <div class="qr-code">
-                        <!-- QR Code would be generated here -->
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=bitcoin:3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5?amount=0.001452" alt="QR Code">
-                    </div>
-                </div>
-                
-                <div class="timer">
-                    <i class="fas fa-clock"></i>
-                    <span>زمان باقیمانده: 14:45</span>
-                </div>
-            </div>
-            
-            <div class="payment-actions">
-                <button class="btn btn-secondary">
-                    <i class="fas fa-arrow-left" style="margin-left: 8px;"></i>
-                    بازگشت
-                </button>
-                <button class="btn btn-primary" id="payButton" onclick="initiatePayment()">
-                    ادامه پرداخت
-                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
-                </button>
-            </div>
-        </div>
-    </div>
+    </header>
 
+    <!-- محتوای اصلی -->
+    <main class="py-5">
+        <div class="container">
+            <div class="payment-container">
+                <div class="payment-header">
+                    <h1>درگاه پرداخت فخرالکتاب پی</h1>
+                    <p>تراکنش امن و سریع با پشتیبانی از رمزارزها</p>
+                </div>
+                
+                <div class="payment-body">
+                    <div class="payment-amount">
+                        <div class="amount-info">
+                            <span class="amount-label">مبلغ قابل پرداخت</span>
+                            <span class="amount-value">49.99</span>
+                        </div>
+                        <span class="amount-currency">USD</span>
+                    </div>
+                    
+                    <div class="crypto-selector">
+                        <div class="selector-header">
+                            <span class="selector-title">انتخاب روش پرداخت</span>
+                            <div class="selector-tabs">
+                                <div class="tab active">همه</div>
+                                <div class="tab">پرطرفدار</div>
+                                <div class="tab">استیبل کوین</div>
+                            </div>
+                        </div>
+                        
+                        <div class="crypto-grid">
+                            <div class="crypto-option selected">
+                                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin" class="crypto-icon">
+                                <span class="crypto-name">بیت‌کوین</span>
+                                <span class="crypto-symbol">BTC</span>
+                            </div>
+                            
+                            <div class="crypto-option">
+                                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="crypto-icon">
+                                <span class="crypto-name">اتریوم</span>
+                                <span class="crypto-symbol">ETH</span>
+                            </div>
+                            
+                            <div class="crypto-option">
+                                <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="Tether" class="crypto-icon">
+                                <span class="crypto-name">تتر</span>
+                                <span class="crypto-symbol">USDT</span>
+                            </div>
+                            
+                            <div class="crypto-option">
+                                <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="Litecoin" class="crypto-icon">
+                                <span class="crypto-name">لایت‌کوین</span>
+                                <span class="crypto-symbol">LTC</span>
+                            </div>
+                            
+                            <div class="crypto-option">
+                                <img src="https://cryptologos.cc/logos/ripple-xrp-logo.png" alt="Ripple" class="crypto-icon">
+                                <span class="crypto-name">ریپل</span>
+                                <span class="crypto-symbol">XRP</span>
+                            </div>
+                            
+                            <div class="crypto-option">
+                                <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BNB" class="crypto-icon">
+                                <span class="crypto-name">بی‌ان‌بی</span>
+                                <span class="crypto-symbol">BNB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-details" id="paymentDetails">
+                        <div class="detail-row">
+                            <span class="detail-label">مبلغ معادل:</span>
+                            <span class="detail-value" id="cryptoAmount">0.001452 BTC</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label">آدرس کیف پول:</span>
+                            <span class="detail-value" id="walletAddress">3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label">شناسه پرداخت:</span>
+                            <span class="detail-value" id="paymentId">NP123456789</span>
+                        </div>
+                        
+                        <div class="qr-container">
+                            <div class="qr-code">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=bitcoin:3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5?amount=0.001452" alt="QR Code">
+                            </div>
+                        </div>
+                        
+                        <div class="timer">
+                            <i class="fas fa-clock"></i>
+                            <span>زمان باقیمانده: 14:45</span>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-actions">
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-arrow-left ml-2"></i>
+                            بازگشت
+                        </button>
+                        <button class="btn btn-primary" id="payButton" onclick="initiatePayment()">
+                            ادامه پرداخت
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="container text-center">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="mb-2">&copy; تمامی حقوق برای درگاه آموزشی فخرالکتاب محفوظ می‌باشد.</p>
+            <p class="mb-2" style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Educational Portal. Since 2020</p>
+            <p class="mb-0"><a href="terms.html">قوانین و شرایط استفاده</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // انتخاب رمز ارز
         const cryptoOptions = document.querySelectorAll('.crypto-option');
@@ -463,7 +570,6 @@
             
             // شبیه‌سازی ارتباط با API
             setTimeout(() => {
-                // اینجا در حالت واقعی باید با API سرویس پرداخت ارتباط برقرار کنید
                 const selectedCrypto = document.querySelector('.crypto-option.selected .crypto-symbol').textContent;
                 const cryptoName = document.querySelector('.crypto-option.selected .crypto-name').textContent;
                 
@@ -474,7 +580,7 @@
                 
                 paymentDetails.style.display = 'block';
                 payButton.textContent = 'بررسی وضعیت پرداخت';
-                payButton.innerHTML = 'بررسی وضعیت پرداخت <i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>';
+                payButton.innerHTML = 'بررسی وضعیت پرداخت <i class="fas fa-spinner fa-spin mr-2"></i>';
                 
                 // اسکرول به بخش پرداخت
                 paymentDetails.scrollIntoView({ behavior: 'smooth' });
@@ -501,7 +607,7 @@
                 if (--timer < 0) {
                     clearInterval(interval);
                     timerElement.textContent = "زمان پرداخت به پایان رسید";
-                    timerElement.style.color = "#ff7675";
+                    timerElement.style.color = "#e74c3c";
                 }
             }, 1000);
         }
