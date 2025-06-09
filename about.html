@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>کتاب‌های ما - درگاه آموزشی فخرالکتاب</title>
+    <title>درباره ما - درگاه آموزشی فخرالکتاب</title>
     <!-- لینک فونت ایران‌سنس و ساحل -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- آیکون‌های فونت آوسام -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* تنظیمات کلی فونت‌ها */
         @font-face {
@@ -24,119 +25,374 @@
             font-weight: normal;
             font-style: normal;
         }
-
+        
         :root {
-            --purple: #8e44ad;
-            --pink: #e84393;
-            --earth: #6c5ce7;
+            --primary-color: #2c3e50;
+            --secondary-color: #e67e22;
+            --accent-color: #f1c40f;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
         
         body {
             font-family: 'Sahel', sans-serif;
             background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
         }
         
         h1, h2, h3, h4, h5, h6,
-        .course-title,
         .nav-link {
             font-family: 'IRANSansX', sans-serif;
+            font-weight: 700;
         }
         
-        .course-card {
+        /* استایل هدر */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 8px;
             transition: all 0.3s ease;
-            border-radius: 0.75rem;
-            border-left: 4px solid;
-            height: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        /* استایل محتوای اصلی */
+        main {
+            padding: 60px 0;
+            background-color: #f5f7fa;
+        }
+        
+        .about-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .about-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-header h1::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            right: 25%;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .about-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+        }
+        
+        .about-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .about-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
             margin-bottom: 20px;
+            position: relative;
+            padding-right: 20px;
         }
         
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        .about-section h2::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
         }
         
-        .card-header {
-            border-radius: 0.75rem 0.75rem 0 0 !important;
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            text-align: justify;
+            color: #555;
         }
         
-        .course-title {
-            color: #000 !important;
+        .team-section {
+            margin-top: 50px;
         }
         
-        .course-img {
-            height: 180px;
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-img {
+            width: 100%;
+            height: 250px;
             object-fit: cover;
         }
         
-        .course-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 2;
+        .member-info {
+            padding: 20px;
         }
         
-        .btn-purple {
-            background-color: var(--purple);
-            border-color: var(--purple);
+        .member-name {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
         }
         
-        .btn-pink {
-            background-color: var(--pink);
-            border-color: var(--pink);
+        .member-position {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
         }
         
-        .btn-earth {
-            background-color: var(--earth);
-            border-color: var(--earth);
+        .member-bio {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* استایل فوتر */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            padding: 40px 0 20px;
+            color: white;
+        }
+        
+        .social-icons {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        footer p {
+            margin-bottom: 10px;
         }
         
         footer a {
-            font-family: 'Sahel', sans-serif;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        /* رسپانسیو */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            
+            .nav {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-item {
+                margin: 5px 0;
+            }
+            
+            .about-header h1 {
+                font-size: 2rem;
+            }
+            
+            .about-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- هدر -->
-    <header class="bg-dark text-white py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="font-weight-bold">درگاه آموزشی فخرالکتاب</h1>
+    <header class="text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <h1 class="font-weight-bold mb-0">درگاه آموزشی فخرالکتاب</h1>
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white" href="index.html">خانه</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="courses.html">دوره‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="books.html">کتاب‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="FakhrulPay.html">فخرالکتاب پِی</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="about.html">درباره ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">تماس با ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="login.html">ورود / ثبت‌نام</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html"><i class="fas fa-home ml-2"></i>خانه</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="courses.html"><i class="fas fa-graduation-cap ml-2"></i>دوره‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="books.html"><i class="fas fa-book ml-2"></i>کتاب‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="FakhrulPay.html"><i class="fas fa-wallet ml-2"></i>فخرالکتاب پِی</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html"><i class="fas fa-info-circle ml-2"></i>درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html"><i class="fas fa-envelope ml-2"></i>تماس با ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="login.html"><i class="fas fa-user ml-2"></i>ورود / ثبت‌نام</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- بدنه اصلی -->
+    <!-- محتوای اصلی -->
     <main class="py-5">
-        <div class="container gold-border">
-            <h2>درباره انتشارات فخرالکتاب</h2>
-            <p>
-                ما در فخرالکتاب به انتشار منابع علمی و آموزشی معتبر و تخصصی اهتمام داریم و مفتخر هستیم از سال ۱۴۰۰ تا کنون در حال ارائه خدمات با کیفیت آموزشی به دانش آموزان و دانشجویان عزیز ایران زمین هستیم...
-            </p>
-            <h2>وجه تسمیه انتشارات فخرالکتاب</h2>
-            <p>
-                علامه محمدباقر فخرالکتاب صفی یاری منشی تبریزی(ره) از خوشنویسان و ادیبان ماندگار ایران زمین است که در طول حیات پربار خویشتن آثاری گرانبها و گوهرین برجای گذاشت...
-            </p>
+        <div class="container">
+            <div class="about-container">
+                <div class="about-header">
+                    <h1>درباره فخرالکتاب</h1>
+                </div>
+                
+                <div class="about-section">
+                    <h2>انتشارات فخرالکتاب</h2>
+                    <p>
+                        ما در فخرالکتاب به انتشار منابع علمی و آموزشی معتبر و تخصصی اهتمام داریم و مفتخر هستیم از سال ۱۴۰۰ تا کنون در حال ارائه خدمات با کیفیت آموزشی به دانش آموزان و دانشجویان عزیز ایران زمین هستیم. هدف ما ایجاد دسترسی آسان به محتوای آموزشی باکیفیت و کمک به پیشرفت علمی جامعه است.
+                    </p>
+                    <p>
+                        با تیمی متشکل از اساتید مجرب و متخصصان حوزه آموزش، تلاش می‌کنیم تا با تولید محتوای علمی دقیق و به‌روز، نیازهای آموزشی مخاطبان خود را به بهترین شکل ممکن برطرف کنیم.
+                    </p>
+                </div>
+                
+                <div class="about-section">
+                    <h2>وجه تسمیه فخرالکتاب</h2>
+                    <p>
+                        علامه محمدباقر فخرالکتاب صفی یاری منشی تبریزی(ره) از خوشنویسان و ادیبان ماندگار ایران زمین است که در طول حیات پربار خویشتن آثاری گرانبها و گوهرین برجای گذاشت. انتخاب این نام برای انتشارات، ادای دین به این شخصیت بزرگ فرهنگی و تأکید بر ارزش والای کتاب و دانش است.
+                    </p>
+                    <p>
+                        فخرالکتاب به معنای "افتخار کتاب" است و این نام نشان‌دهنده تعهد ما به تولید و انتشار آثار ارزشمند و ماندگار در حوزه آموزش و علم است.
+                    </p>
+                </div>
+                
+                <div class="about-section">
+                    <h2>چشم‌انداز و مأموریت</h2>
+                    <p>
+                        چشم‌انداز ما تبدیل شدن به مرجع معتبر آموزشی در سطح ملی و بین‌المللی است. مأموریت اصلی ما تسهیل دسترسی به دانش و ایجاد بستری مناسب برای یادگیری مؤثر و کارآمد است.
+                    </p>
+                    <p>
+                        ما معتقدیم آموزش باکیفیت حق همه افراد جامعه است و تلاش می‌کنیم با قیمت‌های منصفانه و محتوای غنی، این حق را برای همه اقشار جامعه فراهم کنیم.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="about-container team-section">
+                <h2 class="text-center mb-5">تیم فخرالکتاب</h2>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="team1.jpg" alt="مدیر عامل" class="member-img">
+                        <div class="member-info">
+                            <h3 class="member-name">دکتر محمد حسینی</h3>
+                            <p class="member-position">مدیر عامل و مؤسس</p>
+                            <p class="member-bio">
+                                دکترای علوم تربیتی از دانشگاه تهران با بیش از ۱۵ سال سابقه در حوزه آموزش و نشر کتاب‌های آموزشی
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="team2.jpg" alt="مدیر تولید محتوا" class="member-img">
+                        <div class="member-info">
+                            <h3 class="member-name">زهرا محمدی</h3>
+                            <p class="member-position">مدیر تولید محتوا</p>
+                            <p class="member-bio">
+                                کارشناس ارشد زیست‌شناسی با ۱۰ سال سابقه تدریس و تألیف کتاب‌های کمک‌آموزشی
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="team3.jpg" alt="مدیر فناوری" class="member-img">
+                        <div class="member-info">
+                            <h3 class="member-name">علی رضایی</h3>
+                            <p class="member-position">مدیر فناوری</p>
+                            <p class="member-bio">
+                                متخصص فناوری اطلاعات با تمرکز بر توسعه پلتفرم‌های آموزشی آنلاین
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <!-- فوتر -->
     <footer>
         <div class="container text-center">
-            <p>© تمامی حقوق برای درگاه آموزشی فخرالکتاب محفوظ است.</p>
-            <p style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Portal. Since 2020</p>
-            <p><a href="terms.html">قوانین و شرایط</a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="mb-2">&copy; تمامی حقوق برای درگاه آموزشی فخرالکتاب محفوظ می‌باشد.</p>
+            <p class="mb-2" style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Educational Portal. Since 2020</p>
+            <p class="mb-0"><a href="terms.html">قوانین و شرایط استفاده</a></p>
         </div>
     </footer>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
