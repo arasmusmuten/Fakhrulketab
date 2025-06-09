@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ثبت‌نام - فخرالکتاب</title>
-    <link href="https://fonts.googleapis.com/css2?family=Shabnam&display=swap" rel="stylesheet">
+    <!-- فونت‌ها -->
+    <link href="https://cdn.fontcdn.ir/Font/Persian/Sahel/1/Sahel.css" rel="stylesheet">
+    <link href="https://cdn.fontcdn.ir/Font/Persian/IRANSans/1/IRANSans.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -18,7 +20,7 @@
         }
         
         body {
-            font-family: 'Shabnam', sans-serif;
+            font-family: 'Sahel', 'IRANSans', sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #f0e6d2 100%);
             min-height: 100vh;
             margin: 0;
@@ -74,6 +76,7 @@
             padding: 12px 15px;
             transition: all 0.3s;
             background-color: #f9f9f9;
+            font-family: 'Sahel', sans-serif;
         }
         
         .form-control:focus {
@@ -86,6 +89,7 @@
             font-weight: bold;
             color: var(--primary-color);
             margin-bottom: 8px;
+            font-family: 'IRANSans', sans-serif;
         }
         
         .btn-luxury {
@@ -120,6 +124,8 @@
             gap: 8px;
             margin-top: 20px;
             width: 100%;
+            font-family: 'IRANSans', sans-serif;
+            font-weight: bold;
         }
         
         .btn-home:hover {
@@ -164,6 +170,11 @@
             padding-right: 15px;
             padding-left: 45px !important;
         }
+        
+        .title-icon {
+            margin-left: 10px;
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body dir="rtl">
@@ -173,7 +184,7 @@
         <i class="fas fa-pen-fancy decoration decoration-2"></i>
         
         <h2 class="luxury-title">
-            <i class="fas fa-crown" style="margin-left: 10px;"></i>
+            <i class="fas fa-pen-alt title-icon"></i>
             ثبت‌نام در فخرالکتاب
         </h2>
 
@@ -182,8 +193,8 @@
             <div class="mb-4 form-group">
                 <label for="username" class="form-label">نام کاربری</label>
                 <div class="position-relative">
-                    <i class="fas fa-user input-icon"></i>
-                    <input type="text" class="form-control input-with-icon" id="username" required placeholder="نام کاربری خود را وارد کنید">
+                    <i class="fas fa-pencil-alt input-icon"></i>
+                    <input type="text" class="form-control input-with-icon sahel-text" id="username" required placeholder="نام کاربری خود را وارد کنید">
                 </div>
             </div>
 
@@ -191,24 +202,24 @@
                 <label for="email" class="form-label">ایمیل</label>
                 <div class="position-relative">
                     <i class="fas fa-envelope input-icon"></i>
-                    <input type="email" class="form-control input-with-icon" id="email" required placeholder="example@example.com">
+                    <input type="email" class="form-control input-with-icon sahel-text" id="email" required placeholder="example@example.com">
                 </div>
             </div>
 
             <div class="mb-4 form-group">
                 <label for="password" class="form-label">رمز عبور</label>
                 <div class="position-relative">
-                    <i class="fas fa-lock input-icon"></i>
-                    <input type="password" class="form-control input-with-icon" id="password" required placeholder="رمز عبور قوی انتخاب کنید">
+                    <i class="fas fa-key input-icon"></i>
+                    <input type="password" class="form-control input-with-icon sahel-text" id="password" required placeholder="رمز عبور قوی انتخاب کنید">
                 </div>
             </div>
 
             <button type="submit" class="btn btn-luxury w-100">
-                <i class="fas fa-user-plus" style="margin-left: 8px;"></i>
+                <i class="fas fa-sign-in-alt" style="margin-left: 8px;"></i>
                 ثبت‌نام
             </button>
             
-            <a href="index.html" class="btn btn-home">
+            <a href="index.html" class="btn btn-home iransans-text">
                 <i class="fas fa-home"></i>
                 بازگشت به صفحه اصلی
             </a>
