@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- آیکون‌های فونت آوسام -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* تنظیمات کلی فونت‌ها */
         @font-face {
@@ -24,43 +26,207 @@
             font-style: normal;
         }
         
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e67e22;
+            --accent-color: #f1c40f;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
         body {
             font-family: 'Sahel', sans-serif;
             background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
         }
         
         h1, h2, h3, h4, h5, h6,
         .course-title,
         .nav-link {
             font-family: 'IRANSansX', sans-serif;
+            font-weight: 700;
         }
         
-        /* استایل‌های اضافی */
+        /* استایل هدر */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        /* استایل محتوای اصلی */
+        main {
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            padding: 80px 0;
+        }
+        
+        main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+        
+        main > .container {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+        
+        .img-fluid {
+            max-height: 120px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            right: 0;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        main p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-right: 20px;
+            position: relative;
+        }
+        
+        main p::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: var(--accent-color);
+        }
+        
+        /* استایل دکمه */
         .btn-warning {
-            font-family: 'Sahel', sans-serif;
-            font-weight: bold;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+        }
+        
+        .btn-warning:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(241, 196, 15, 0.6);
+            background-color: #f39c12;
+        }
+        
+        /* استایل فوتر */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            padding: 30px 0;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
         }
         
         footer a {
-            font-family: 'Sahel', sans-serif;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--accent-color) !important;
+            text-decoration: none;
+        }
+        
+        /* افکت‌های کلی */
+        .transition {
+            transition: all 0.3s ease;
+        }
+        
+        /* رسپانسیو */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            
+            .nav {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-item {
+                margin: 5px 0;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- هدر -->
-    <header class="bg-dark text-white py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="font-weight-bold">درگاه آموزشی فخرالکتاب</h1>
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <h1 class="font-weight-bold mb-0">درگاه آموزشی فخرالکتاب</h1>
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white" href="index.html">خانه</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="courses.html">دوره‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="books.html">کتاب‌های ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="FakhrulPay.html">فخرالکتاب پِی</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="about.html">درباره ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">تماس با ما</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="login.html">ورود / ثبت‌نام</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html"><i class="fas fa-home ml-2"></i>خانه</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="courses.html"><i class="fas fa-graduation-cap ml-2"></i>دوره‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="books.html"><i class="fas fa-book ml-2"></i>کتاب‌های ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="FakhrulPay.html"><i class="fas fa-wallet ml-2"></i>فخرالکتاب پِی</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html"><i class="fas fa-info-circle ml-2"></i>درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html"><i class="fas fa-envelope ml-2"></i>تماس با ما</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="login.html"><i class="fas fa-user ml-2"></i>ورود / ثبت‌نام</a></li>
                 </ul>
             </nav>
         </div>
@@ -68,24 +234,32 @@
 
     <main class="py-5">
         <div class="container text-right">
-            <img src="mainlogo.png" class="img-fluid w-40">
+            <img src="mainlogo.png" alt="لوگو فخرالکتاب" class="img-fluid">
             <h2 class="font-weight-bold">چرا فخرالکتاب؟</h2>
-            <p>کیفیت بالا</p>
-            <p>محتوای تخصصی</p>
-            <p>کاهش هزینه های آموزش و قیمت مناسب</p>
-            <p>نوآوری در خدمت و ارائه به روز ترین خدمات آموزشی و علمی</p>
-
+            <p>کیفیت بالا و استانداردهای آموزشی پیشرفته</p>
+            <p>محتوای تخصصی و به‌روز شده توسط اساتید مجرب</p>
+            <p>کاهش هزینه‌های آموزش با قیمت‌های مناسب و منصفانه</p>
+            <p>نوآوری در خدمت و ارائه به‌روزترین متدهای آموزشی</p>
         </div>
         <div class="container text-center">
-            <a href="courses.html" class="btn btn-warning btn-lg mt-4">شروع یادگیری</a>
+            <a href="courses.html" class="btn btn-warning btn-lg mt-4 transition">
+                شروع یادگیری
+                <i class="fas fa-arrow-left mr-2"></i>
+            </a>
         </div>
     </main>
 
-    <footer class="bg-dark text-white py-3">
+    <footer class="bg-dark text-white py-4">
         <div class="container text-center">
-            <p>&copy; تمامی حقوق برای درگاه آموزشی فخرالکتاب محفوظ می باشد و اجازه هیچگونه کپی برداری حتی با ذکر منبع وجود ندارد.</p>
-            <p style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Educational Portal. Since 2020</p>
-            <p><a href="terms.html" class="text-white">قوانین و شرایط</a></p>
+            <div class="social-icons mb-3">
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-telegram fa-lg"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+            <p class="mb-2">&copy; تمامی حقوق برای درگاه آموزشی فخرالکتاب محفوظ می‌باشد.</p>
+            <p class="mb-2" style="font-family: 'Times New Roman', sans-serif;">Fakhrulketab Educational Portal. Since 2020</p>
+            <p class="mb-0"><a href="terms.html" class="text-white">قوانین و شرایط استفاده</a></p>
         </div>
     </footer>
 
